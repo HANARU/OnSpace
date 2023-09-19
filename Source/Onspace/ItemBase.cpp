@@ -1,58 +1,27 @@
-#include "ItemBase.h"
-#include "SpaceShip.h"
-#include "Components/BoxComponent.h"
-#include "MotionControllerComponent.h"
+// Fill out your copyright notice in the Description page of Project Settings.
 
+
+#include "ItemBase.h"
+
+// Sets default values
 AItemBase::AItemBase()
 {
-	ItemBody = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Item"));
-
-	RootComponent = ItemBody;
+ 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
 
 }
 
+// Called when the game starts or when spawned
 void AItemBase::BeginPlay()
 {
 	Super::BeginPlay();
-
-	ItemBody->OnComponentBeginOverlap.AddDynamic(this, &AItemBase::OnItemBodyBeginOverlap);
 	
 }
 
-void AItemBase::ExecuteGrab(UMotionControllerComponent* MotionControllerToGrab)
+// Called every frame
+void AItemBase::Tick(float DeltaTime)
 {
-	if (bHasGravity)
-	{
-		ItemBody->SetSimulatePhysics(false);
-		AttachToComponent(MotionController, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-	}
-	else
-	{
-		AttachToComponent(MotionController, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-		ItemBody->SetSimulatePhysics(bHasGravity);
-	}
+	Super::Tick(DeltaTime);
+
 }
 
-void AItemBase::ExecuteRelease(UMotionControllerComponent* MotionControllerToRelease)
-{
-	MotionController = nullptr;
-	DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-	ItemBody->SetSimulatePhysics(bHasGravity);
-}
-
-void AItemBase::OnItemBodyBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
-	ASpaceShip* Ship = Cast<ASpaceShip>(OtherActor);
-
-	if (Ship != nullptr)
-	{
-		if (Ship->Fly2WalkCollision == OtherComp && IsValid(ItemBody->GetAttachParent()))
-		{
-			bHasGravity = true;
-		}
-		else if (Ship->Walk2FlyCollision == OtherComp && IsValid(ItemBody->GetAttachParent()))
-		{
-			bHasGravity = false;
-		}
-	}
-}
