@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -12,15 +10,49 @@ class ONSPACE_API ASpaceShip : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	ASpaceShip();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UStaticMeshComponent* InteriorBody;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UStaticMeshComponent* InteriorDoor;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UStaticMeshComponent* ExteriorBody;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UStaticMeshComponent* ExteriorDoor;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UStaticMeshComponent* Lamps;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UStaticMeshComponent* DiningRoomLamp;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UBoxComponent* Fly2WalkCollision;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UBoxComponent* Walk2FlyCollision;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UBoxComponent* OutDoorCollision;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UBoxComponent* InDoorCollision;
+
+	FVector ExteriorDoorInitLocation;
+	FVector InteriorDoorInitLocation;
+
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+public:
+	UFUNCTION()
+	void OnBeginOverlap_Walk2Fly(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnBeginOverlap_Fly2Walk(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 };
