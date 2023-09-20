@@ -86,6 +86,12 @@ AVRPlayer::AVRPlayer()
 		IA_Move = temp_Move.Object;
 	}
 
+	static ConstructorHelpers::FObjectFinder<UInputAction>temp_GrabLeft(TEXT("/Game/7_MISC/Input/IA_Grab_Left.IA_Grab_Left"));
+	if (temp_GrabLeft.Succeeded())
+	{
+		IA_Grab_Left = temp_GrabLeft.Object;
+	}
+
 }
 
 // Called when the game starts or when spawned
@@ -170,16 +176,16 @@ void AVRPlayer::FlyValue(const FInputActionValue& value)
 void AVRPlayer::Grab_Left_Started(const FInputActionValue& value)
 {
 	UWorld* world = GetWorld();
-
+	UE_LOG(LogTemp, Warning, TEXT("Try Grab!"));
 	TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypes;
-	ObjectTypes.Add(UEngineTypes::ConvertToObjectType(ECollisionChannel::ECC_WorldDynamic));
+	ObjectTypes.Add(UEngineTypes::ConvertToObjectType(ECollisionChannel::ECC_GameTraceChannel4));
 	TArray<AActor *> OverlappingActors;
 
 	if(world!=nullptr)
 	{ 
-	UKismetSystemLibrary::SphereOverlapActors(world, motionControllerLeft->GetRelativeLocation(),SphereRadius,ObjectTypes, NULL, TArray<AActor*>(), OverlappingActors); //왼손 앞에 박힌 Sphere콜리전에 WorldDynamic Static인 무언가가 닿는다면 닿은 모든 것들이 OverLapping 배열에 들어간다.
+	UKismetSystemLibrary::SphereOverlapActors(world, motionControllerLeft->GetComponentLocation(),SphereRadius,ObjectTypes, NULL, TArray<AActor*>(), OverlappingActors); //왼손 앞에 박힌 Sphere콜리전에 WorldDynamic Static인 무언가가 닿는다면 닿은 모든 것들이 OverLapping 배열에 들어간다.
 	}
-
+	
 	for (int i = 0; i < OverlappingActors.Num(); i++) //배열 검사
 	{
 // 		if(UKismetSystemLibrary::DoesImplementInterface(OverlappingActors[i],UI_Grab::StaticClass()))
