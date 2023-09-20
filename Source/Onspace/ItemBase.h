@@ -3,7 +3,23 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Public/I_Grab.h"
+#include "Engine/DataTable.h"
 #include "ItemBase.generated.h"
+
+USTRUCT(BlueprintType)
+struct FItemData : public FTableRowBase
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = ItemData)
+	FString ItemName;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (DisplayName = "ItemMesh"))
+	TObjectPtr<UStaticMesh> ItemMesh;
+
+};
+
+
 
 UCLASS()
 class ONSPACE_API AItemBase : public AActor, public II_Grab
@@ -22,7 +38,10 @@ public:
 	bool bHasGravity = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
-	FString objectName;
+	FName objectName;
+
+	FItemData* CurrentItemData;
+	UDataTable* CurrentItemTable;
 
 protected:
 	virtual void BeginPlay() override;

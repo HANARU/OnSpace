@@ -1,7 +1,9 @@
 #include "ItemBase.h"
+#include "VRInstance.h"
 #include "SpaceShip.h"
 #include "Components/BoxComponent.h"
 #include "MotionControllerComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 AItemBase::AItemBase()
 {
@@ -10,6 +12,16 @@ AItemBase::AItemBase()
 
 	RootComponent = ItemBody;
 
+	/*UVRInstance* Instance = Cast<UVRInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+	if (Instance == nullptr)	return;
+
+	CurrentItemData = Instance->GetItemData(objectName);
+	if (CurrentItemData)
+	{
+		objectName = CurrentItemData->ItemName;
+
+		ItemBody->SetStaticMesh(CurrentItemData->ItemMesh);
+	}*/
 }
 
 void AItemBase::BeginPlay()
@@ -19,6 +31,8 @@ void AItemBase::BeginPlay()
 	ItemBody->OnComponentBeginOverlap.AddDynamic(this, &AItemBase::OnItemBodyBeginOverlap);
 	
 }
+
+
 
 void AItemBase::Grab(class UMotionControllerComponent* MotionControllerToGrab)
 {

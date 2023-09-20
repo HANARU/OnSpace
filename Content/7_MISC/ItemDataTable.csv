@@ -1,0 +1,3 @@
+---,ItemName,ItemMesh
+NewRow,"Metal","/Script/Engine.StaticMesh'/Game/3_SM/Metal/SM_Metall.SM_Metall'"
+NewRow_0,"Water","/Script/Engine.StaticMesh'/Game/Old/LevelPrototyping/Meshes/SM_ChamferCube.SM_ChamferCube'"
