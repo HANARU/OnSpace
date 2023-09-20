@@ -56,12 +56,12 @@ AVRPlayer::AVRPlayer()
 	arrowLeft = CreateDefaultSubobject<UArrowComponent>(TEXT(
 	"arrowLeft"));
 	arrowLeft->SetupAttachment(motionControllerLeft);
-	arrowLeft->SetRelativeRotation(FRotator(0,-90,0));
+	arrowLeft->SetRelativeRotation(FRotator(-90,0,0));
 	arrowLeft->SetRelativeScale3D(FVector(0.25));
 	//RIGHT
 	arrowRight = CreateDefaultSubobject<UArrowComponent>(TEXT("arrowRight"));
 	arrowRight->SetupAttachment(motionControllerRight);
-	arrowRight->SetRelativeRotation(FRotator(0, -90, 0));
+	arrowRight->SetRelativeRotation(FRotator(-90, 0, 0));
 	arrowRight->SetRelativeScale3D(FVector(0.25));
 	
 	/*Sphere(Oxygen UI Location)*/

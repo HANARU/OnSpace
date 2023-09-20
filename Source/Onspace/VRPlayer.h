@@ -31,11 +31,11 @@ public:
 	
 	/*----------Components---------------*/
 	//카메라
-	UPROPERTY(EditAnywhere, Category="MySettings|Components")
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="MySettings|Components")
 	class UCameraComponent* compCam;
 
 	//Body mesh
-	UPROPERTY(EditAnywhere, Category="MySettings|Components")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="MySettings|Components")
 	class USkeletalMeshComponent* compSkeletal;
 
 	//모션 컨트롤러 좌
@@ -43,7 +43,7 @@ public:
 	class UMotionControllerComponent* motionControllerLeft;
 
 	//손 위치 트래킹할 arrow comp (좌)
-	UPROPERTY(EditAnywhere, Category="MySettings|Components")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="MySettings|Components")
 	class UArrowComponent* arrowLeft;
 
 	//모션 컨트롤러 우
@@ -51,7 +51,7 @@ public:
 	class UMotionControllerComponent* motionControllerRight;
 
 	//손 위치 트래킹할 arrow comp (우)
-	UPROPERTY(EditAnywhere, Category="MySettings|Components")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="MySettings|Components")
 	class UArrowComponent* arrowRight;
 
 	//Sphere Collision - Oxygen UI Location
