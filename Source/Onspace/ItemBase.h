@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -13,19 +11,27 @@ class ONSPACE_API AItemBase : public AActor, public II_Grab
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	AItemBase();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UStaticMeshComponent* ItemBody;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class UMotionControllerComponent* MotionController;
+
+	bool bHasGravity = false;
+
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
 public:
-	virtual void Grab(class UMotionControllerComponent* MotionController) override;
-	virtual void Release(class UMotionControllerComponent* MotionController) override;
+	virtual void Grab(class UMotionControllerComponent* MotionControllerToGrab) override;
+	virtual void Release(class UMotionControllerComponent* MotionControllerToRelease) override;
 	virtual bool Active() override;
+
+	void ExecuteGrab(UMotionControllerComponent* MotionControllerToGrab);
+
+	void ExecuteRelease(UMotionControllerComponent* MotionControllerToRelease);
+
+	void OnItemBodyBeginOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };

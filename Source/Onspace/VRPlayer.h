@@ -75,6 +75,9 @@ public:
 	UPROPERTY(VisibleAnywhere,Category = "Input", meta = (AllowPrivateAccess = "true"))
 	class UInputAction* IA_Grab_Left;
 
+	UPROPERTY(VisibleAnywhere, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	class UInputAction* IA_Grab_Right;
+
 	//Bind Fuction
 	UFUNCTION(Category="Input", meta = (AllowPrivateAccess = "true"))
 	void Move(const FInputActionValue& value);
@@ -87,6 +90,12 @@ public:
 
 	UFUNCTION(Category="Input", meta = (AllowPrivateAccess = "true"))
 	void Grab_Left_Closed(const FInputActionValue& value);
+
+	UFUNCTION(Category = "Input", meta = (AllowPrivateAccess = "true"))
+	void Grab_Right_Started(const FInputActionValue& value);
+
+	UFUNCTION(Category = "Input", meta = (AllowPrivateAccess = "true"))
+	void Grab_Right_Closed(const FInputActionValue& value);
 // 	UPROPERTY(VisibleAnywhere,Category = "Input", meta = (AllowPrivateAccess = "true"))
 // 	class UInputAction* ;
 
@@ -111,5 +120,7 @@ public:
 	float SphereRadius =10.0f;
 	UPROPERTY()
 	class AActor* GrabLeftActor;
+	UPROPERTY()
+	class AActor* GrabRightActor;
 
 };

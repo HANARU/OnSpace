@@ -1,44 +1,79 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "ItemBase.h"
+#include "SpaceShip.h"
+#include "Components/BoxComponent.h"
+#include "MotionControllerComponent.h"
 
-// Sets default values
 AItemBase::AItemBase()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	//PrimaryActorTick.bCanEverTick = true;
+	ItemBody = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Item"));
+
+	RootComponent = ItemBody;
 
 }
 
-// Called when the game starts or when spawned
 void AItemBase::BeginPlay()
 {
 	Super::BeginPlay();
+
+	ItemBody->OnComponentBeginOverlap.AddDynamic(this, &AItemBase::OnItemBodyBeginOverlap);
 	
 }
 
-// Called every frame
-void AItemBase::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
-
-void AItemBase::Grab(class UMotionControllerComponent* MotionController)
+void AItemBase::Grab(class UMotionControllerComponent* MotionControllerToGrab)
 {
 	GEngine->AddOnScreenDebugMessage(-1,4.f,FColor::Red, TEXT("ItemBase Grab!"));
 	UE_LOG(LogTemp,Warning,TEXT("ItemBase Grab!"));
+	ExecuteGrab(MotionControllerToGrab);
 }
 
-void AItemBase::Release(class UMotionControllerComponent* MotionController)
+void AItemBase::Release(class UMotionControllerComponent* MotionControllerToRelease)
 {
 	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, TEXT("ItemBase Release!"));
 	UE_LOG(LogTemp, Warning, TEXT("ItemBase Release!"));
+	ExecuteRelease(MotionControllerToRelease);
 }
 
 bool AItemBase::Active()
 {
 	return true;
+}
+
+void AItemBase::ExecuteGrab(UMotionControllerComponent* MotionControllerToGrab)
+{
+	if (bHasGravity)
+	{
+		ItemBody->SetSimulatePhysics(false);
+		AttachToComponent(MotionControllerToGrab, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+	}
+	else
+	{
+		AttachToComponent(MotionControllerToGrab, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		ItemBody->SetSimulatePhysics(bHasGravity);
+	}
+}
+
+void AItemBase::ExecuteRelease(UMotionControllerComponent* MotionControllerToRelease)
+{
+	MotionControllerToRelease = nullptr;
+	DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+	ItemBody->SetSimulatePhysics(bHasGravity);
+}
+
+void AItemBase::OnItemBodyBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	ASpaceShip* Ship = Cast<ASpaceShip>(OtherActor);
+
+	if (Ship != nullptr)
+	{
+		if (Ship->compWalkCollision == OtherComp && IsValid(ItemBody->GetAttachParent()))
+		{
+			bHasGravity = true;
+		}
+		else if (Ship->compFlyCollision == OtherComp && IsValid(ItemBody->GetAttachParent()))
+		{
+			bHasGravity = false;
+		}
+	}
 }
 

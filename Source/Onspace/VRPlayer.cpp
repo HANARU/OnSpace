@@ -86,10 +86,16 @@ AVRPlayer::AVRPlayer()
 		IA_Move = temp_Move.Object;
 	}
 
-	static ConstructorHelpers::FObjectFinder<UInputAction>temp_GrabLeft(TEXT("/Game/7_MISC/Input/IA_Grab_Left.IA_Grab_Left"));
+	static ConstructorHelpers::FObjectFinder<UInputAction>temp_GrabLeft(TEXT("/Game/7_MISC/Input/IA_Grab_Left"));
 	if (temp_GrabLeft.Succeeded())
 	{
 		IA_Grab_Left = temp_GrabLeft.Object;
+	}
+
+	static ConstructorHelpers::FObjectFinder<UInputAction>temp_GrabRight(TEXT("/Game/7_MISC/Input/IA_Grab_Right"));
+	if (temp_GrabRight.Succeeded())
+	{
+		IA_Grab_Right = temp_GrabRight.Object;
 	}
 
 }
@@ -142,6 +148,10 @@ void AVRPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	//Grab_Left
 		EnhancedInputComponent->BindAction(IA_Grab_Left,ETriggerEvent::Started,this,&AVRPlayer::Grab_Left_Started);
 		EnhancedInputComponent->BindAction(IA_Grab_Left,ETriggerEvent::Completed,this,&AVRPlayer::Grab_Left_Closed);
+
+	//Grab Right
+		EnhancedInputComponent->BindAction(IA_Grab_Right, ETriggerEvent::Started, this, &AVRPlayer::Grab_Right_Started);
+		EnhancedInputComponent->BindAction(IA_Grab_Right, ETriggerEvent::Completed, this, &AVRPlayer::Grab_Right_Closed);
 	}
 }
 
@@ -209,5 +219,43 @@ void AVRPlayer::Grab_Left_Closed(const FInputActionValue& value)
 		Cast<II_Grab>(GrabLeftActor)->Release(motionControllerLeft);
 		//놓을 수 있다.
 		GrabLeftActor = NULL; //놓았으니 현재 잡은 물건은 없다. 액터 정보 초기화
+	}
+}
+
+void AVRPlayer::Grab_Right_Started(const FInputActionValue& value)
+{
+	UWorld* world = GetWorld();
+	UE_LOG(LogTemp, Warning, TEXT("Try Grab!"));
+	TArray<TEnumAsByte<EObjectTypeQuery>> ObjectTypes;
+	ObjectTypes.Add(UEngineTypes::ConvertToObjectType(ECollisionChannel::ECC_GameTraceChannel4));
+	TArray<AActor*> OverlappingActors;
+
+	if (world != nullptr)
+	{
+		UKismetSystemLibrary::SphereOverlapActors(world, motionControllerRight->GetComponentLocation(), SphereRadius, ObjectTypes, NULL, TArray<AActor*>(), OverlappingActors); //왼손 앞에 박힌 Sphere콜리전에 WorldDynamic Static인 무언가가 닿는다면 닿은 모든 것들이 OverLapping 배열에 들어간다.
+	}
+
+	for (int i = 0; i < OverlappingActors.Num(); i++) //배열 검사
+	{
+		// 		if(UKismetSystemLibrary::DoesImplementInterface(OverlappingActors[i],UI_Grab::StaticClass()))
+		// 		{
+		// 			OverlappingActors[i]
+		// 		};
+		if (OverlappingActors[i]->GetClass()->ImplementsInterface(UI_Grab::StaticClass())) //닿은 것 중 인터페이스를 적용시킨 액터라면
+		{
+			Cast<II_Grab>(OverlappingActors[i])->Grab(motionControllerRight); //잡을 수 있다.
+			GrabRightActor = OverlappingActors[i]; //액터 정보 저장
+			break; //한 손에 한개만 집을 거니까 찾았으면 해당 반복문을 종료시킨다.
+		}
+	}
+}
+
+void AVRPlayer::Grab_Right_Closed(const FInputActionValue& value)
+{
+	if (GrabRightActor != nullptr) //잡은 물건이 있다면
+	{
+		Cast<II_Grab>(GrabRightActor)->Release(motionControllerRight);
+		//놓을 수 있다.
+		GrabRightActor = NULL; //놓았으니 현재 잡은 물건은 없다. 액터 정보 초기화
 	}
 }
