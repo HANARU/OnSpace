@@ -21,6 +21,9 @@ public:
 
 	bool bHasGravity = false;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	FString objectName;
+
 protected:
 	virtual void BeginPlay() override;
 
