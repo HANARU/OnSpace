@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Public/I_Grab.h"
 #include "ItemBase.generated.h"
 
 UCLASS()
-class ONSPACE_API AItemBase : public AActor
+class ONSPACE_API AItemBase : public AActor, public II_Grab
 {
 	GENERATED_BODY()
 	
@@ -23,4 +24,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+public:
+	virtual void Grab(class UMotionControllerComponent* MotionController) override;
+	virtual void Release(class UMotionControllerComponent* MotionController) override;
+	virtual bool Active() override;
 };

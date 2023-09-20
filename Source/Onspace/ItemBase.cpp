@@ -25,3 +25,20 @@ void AItemBase::Tick(float DeltaTime)
 
 }
 
+void AItemBase::Grab(class UMotionControllerComponent* MotionController)
+{
+	GEngine->AddOnScreenDebugMessage(-1,4.f,FColor::Red, TEXT("ItemBase Grab!"));
+	UE_LOG(LogTemp,Warning,TEXT("ItemBase Grab!"));
+}
+
+void AItemBase::Release(class UMotionControllerComponent* MotionController)
+{
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, TEXT("ItemBase Release!"));
+	UE_LOG(LogTemp, Warning, TEXT("ItemBase Release!"));
+}
+
+bool AItemBase::Active()
+{
+	return true;
+}
+

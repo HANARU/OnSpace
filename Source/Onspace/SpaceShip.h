@@ -23,4 +23,52 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+
+public:
+/*-------------- Components -----------------*/
+//------Collision
+//바깥문 콜리젼
+	UPROPERTY(EditAnywhere,Category = "MySettings")	
+	class UBoxComponent* compOutDoorCollision;
+	
+//안쪽문 콜리젼
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UBoxComponent* compIndoorCollision;
+	
+// Fly Mode Collision
+	UPROPERTY(EditAnywhere,Category="MySettings")
+	class UBoxComponent* compFlyCollision;
+
+// Walk Mode Collision
+	UPROPERTY(EditAnywhere,Category="MySettings")
+	class UBoxComponent* compWalkCollision;
+
+
+//--------StaticMesh
+//spaceship 외관
+	UPROPERTY(EditAnywhere,Category = "MySettings")
+	class UStaticMeshComponent* compExterior;
+
+//spaceship 바깥문
+	UPROPERTY(EditAnywhere,Category = "MySettings")
+	class UStaticMeshComponent* compExteriorDoor;
+
+//spaceship 내관
+	UPROPERTY(EditAnywhere,Category = "MySettings")
+	class UStaticMeshComponent* compInterior;
+
+//spaceship 안쪽문
+	UPROPERTY(EditAnywhere,Category = "MySettings")
+	class UStaticMeshComponent* compInteriorDoor;
+
+//전체 조명
+	UPROPERTY(EditAnywhere,Category = "MySettings")
+	class UStaticMeshComponent* Lamps;
+
+//식탁 조명
+	UPROPERTY(EditAnywhere,Category = "MySettings")
+	class UStaticMeshComponent* diningRoomLamp;
+
+
+
 };
