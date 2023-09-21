@@ -14,6 +14,7 @@
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "Kismet/KismetStringLibrary.h"
 #include "I_Grab.h"
 #include "GrabGravityActor.h"
 
@@ -99,6 +100,12 @@ AVRPlayer::AVRPlayer()
 		IA_Grab_Right = temp_GrabRight.Object;
 	}
 
+	static ConstructorHelpers::FObjectFinder<UInputAction>temp_FlyValue(TEXT("/Game/7_MISC/Input/IA_FlyValue"));
+	if (temp_FlyValue.Succeeded())
+	{
+		IA_FlyValue = temp_FlyValue.Object;
+	}
+
 	GrabGravityActor = nullptr;
 
 }
@@ -134,7 +141,8 @@ void AVRPlayer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	//CheckOxygenLeak();
+	CheckOxygenLeak();
+	ZeroGMovement();
 }
 
 // Called to bind functionality to input
@@ -149,7 +157,6 @@ void AVRPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	
 	//FlyValue
 		EnhancedInputComponent->BindAction(IA_FlyValue, ETriggerEvent::Triggered, this, &AVRPlayer::FlyValue);
-		//EnhancedInputComponent->BindAction(moveAction,)
 	
 	//Grab_Left
 		EnhancedInputComponent->BindAction(IA_Grab_Left,ETriggerEvent::Started,this,&AVRPlayer::Grab_Left_Started);
@@ -174,7 +181,7 @@ void AVRPlayer::ZeroGMovement()
 	{
 		if (bValidGrabGravityActor == false)
 		{
-			GetCharacterMovement()->Velocity = (GetActorLocation() - CurrentLocation) * 5.f;
+			GetCharacterMovement()->Velocity = (GetActorLocation() - CurrentLocation) * 2.f;
 			bValidGrabGravityActor = true;
 		}
 	}
@@ -186,9 +193,10 @@ void AVRPlayer::Move(const FInputActionValue& value)
 {
 	FVector2D Movement = value.Get<FVector2D>();
 	
-	AddMovementInput(compCam->GetForwardVector(), Movement.Y * MovingParam)
-	;
+	AddMovementInput(compCam->GetForwardVector(), Movement.Y * MovingParam);
 	AddMovementInput(compCam->GetRightVector(), Movement.X*MovingParam);
+
+	GEngine->AddOnScreenDebugMessage(-1, 0.001f, FColor::Blue, TEXT("Log"));
 }
 
 
@@ -225,23 +233,20 @@ void AVRPlayer::Grab_Left_Started(const FInputActionValue& value)
 	
 	for (int i = 0; i < OverlappingActors.Num(); i++) //배열 검사
 	{
-// 		if(UKismetSystemLibrary::DoesImplementInterface(OverlappingActors[i],UI_Grab::StaticClass()))
-// 		{
-// 			OverlappingActors[i]
-// 		};
-		if (OverlappingActors[i]->GetClass()->ImplementsInterface(UI_Grab::StaticClass())) //닿은 것 중 인터페이스를 적용시킨 액터라면
-		{
-			Cast<II_Grab>(OverlappingActors[i])->Grab(motionControllerLeft); //잡을 수 있다.
-			GrabLeftActor  = OverlappingActors[i]; //액터 정보 저장
-			break; //한 손에 한개만 집을 거니까 찾았으면 해당 반복문을 종료시킨다.
-		}
-		AGrabGravityActor* GrabActor = Cast<AGrabGravityActor>(OverlappingActors[i]);
+ 		AGrabGravityActor* GrabActor = Cast<AGrabGravityActor>(OverlappingActors[i]);
 		if (GrabActor != nullptr)
 		{
 			GrabGravityActor = GrabActor;
 			GrabGravityActor->GrabbingController = motionControllerLeft;
 			GrabGravityActor->GrabLocation = motionControllerLeft->GetComponentLocation();
 		}
+		if (OverlappingActors[i]->GetClass()->ImplementsInterface(UI_Grab::StaticClass())) //닿은 것 중 인터페이스를 적용시킨 액터라면
+		{
+			Cast<II_Grab>(OverlappingActors[i])->Grab(motionControllerLeft); //잡을 수 있다.
+			GrabLeftActor  = OverlappingActors[i]; //액터 정보 저장
+			break; //한 손에 한개만 집을 거니까 찾았으면 해당 반복문을 종료시킨다.
+		}
+		
 	}
 	
 }
@@ -276,23 +281,23 @@ void AVRPlayer::Grab_Right_Started(const FInputActionValue& value)
 
 	for (int i = 0; i < OverlappingActors.Num(); i++) //배열 검사
 	{
-		// 		if(UKismetSystemLibrary::DoesImplementInterface(OverlappingActors[i],UI_Grab::StaticClass()))
-		// 		{
-		// 			OverlappingActors[i]
-		// 		};
+		FString ActorName = OverlappingActors[i]->GetName();
+		GEngine->AddOnScreenDebugMessage(-1, 4.f, FColor::Red, ActorName);
+		AGrabGravityActor* GrabActor = Cast<AGrabGravityActor>(OverlappingActors[i]);
+		if (GrabActor != nullptr)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 4.f, FColor::Yellow, TEXT("Overlap Activate"));
+			GrabGravityActor = GrabActor;
+			GrabGravityActor->GrabbingController = motionControllerRight;
+			GrabGravityActor->GrabLocation = motionControllerRight->GetComponentLocation();
+		}
 		if (OverlappingActors[i]->GetClass()->ImplementsInterface(UI_Grab::StaticClass())) //닿은 것 중 인터페이스를 적용시킨 액터라면
 		{
 			Cast<II_Grab>(OverlappingActors[i])->Grab(motionControllerRight); //잡을 수 있다.
 			GrabRightActor = OverlappingActors[i]; //액터 정보 저장
 			break; //한 손에 한개만 집을 거니까 찾았으면 해당 반복문을 종료시킨다.
 		}
-		AGrabGravityActor* GrabActor = Cast<AGrabGravityActor>(OverlappingActors[i]);
-		if (GrabActor != nullptr)
-		{
-			GrabGravityActor = GrabActor;
-			GrabGravityActor->GrabbingController = motionControllerRight;
-			GrabGravityActor->GrabLocation = motionControllerRight->GetComponentLocation();
-		}
+
 	}
 }
 

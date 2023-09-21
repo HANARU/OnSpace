@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -12,20 +10,17 @@ class ONSPACE_API ASpaceShip : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	ASpaceShip();
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
 
 public:
 /*-------------- Components -----------------*/
+
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class USceneComponent* BaseComponent;
+
 //------Collision
 //바깥문 콜리젼
 	UPROPERTY(EditAnywhere,Category = "MySettings")	
@@ -69,6 +64,14 @@ public:
 	UPROPERTY(EditAnywhere,Category = "MySettings")
 	class UStaticMeshComponent* diningRoomLamp;
 
+	FVector ExteriorDoorInitLocation;
+	FVector InteriorDoorInitLocation;
 
 
+public:
+	UFUNCTION()
+	void OnBeginOverlap_Walk2Fly(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnBeginOverlap_Fly2Walk(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };

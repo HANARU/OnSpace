@@ -1,20 +1,21 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "SpaceShip.h"
-#include "Components/StaticMeshComponent.h"
+#include "VRPlayer.h"
 #include "Components/BoxComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
 ASpaceShip::ASpaceShip()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	BaseComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Base"));
+	SetRootComponent(BaseComponent);
+	BaseComponent->SetRelativeLocation(FVector(0, 0, 0));
+	
 
 	/*---------------  Static Mesh COMP -------------------*/
 	//Exterior component
 	compExterior = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Exterior"));
-	compExterior->SetupAttachment(RootComponent);
+	compExterior->SetupAttachment(BaseComponent);
 	ConstructorHelpers::FObjectFinder<UStaticMesh> tempExterior(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PlayerShip_Exterior/NoneDoor_SpaceShip.NoneDoor_SpaceShip'"));
 	if (tempExterior.Succeeded())
 	{
@@ -33,7 +34,7 @@ ASpaceShip::ASpaceShip()
 
 	//Interior Component
 	compInterior = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Interior"));
-	compInterior->SetupAttachment(RootComponent);
+	compInterior->SetupAttachment(BaseComponent);
 	ConstructorHelpers::FObjectFinder<UStaticMesh> tempInterior(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PlayerShip_Interior/SM_SpaceCruiser_FullInterior.SM_SpaceCruiser_FullInterior'"));
 	if (tempInterior.Succeeded())
 	{
@@ -53,7 +54,7 @@ ASpaceShip::ASpaceShip()
 
 	//Lamps Comp
 	Lamps = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Lamps"));
-	compInterior->SetupAttachment(RootComponent);
+	compInterior->SetupAttachment(BaseComponent);
 	ConstructorHelpers::FObjectFinder<UStaticMesh> tempLamps(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PlayerShip_InteriorLamps/SM_DCruiserInterior_Lamps.SM_DCruiserInterior_Lamps'"));
 	if (tempLamps.Succeeded())
 	{
@@ -63,7 +64,7 @@ ASpaceShip::ASpaceShip()
 
 	//Dining Lamp comp
 	diningRoomLamp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("diningRoomLamp"));
-	compInterior->SetupAttachment(RootComponent);
+	compInterior->SetupAttachment(GetRootComponent());
 	/*ConstructorHelpers::FObjectFinder<UStaticMesh> tempdiningRoomLamp(TEXT(""));*/
 // 	if (tempLamps.Succeeded())
 // 	{
@@ -77,25 +78,25 @@ ASpaceShip::ASpaceShip()
 
 	//OutDoorCollision
 	compOutDoorCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("OutDoorCollision"));
-	compOutDoorCollision->SetupAttachment(RootComponent);
+	compOutDoorCollision->SetupAttachment(GetRootComponent());
 	compOutDoorCollision->SetRelativeLocation(FVector(-1317.0f,-5,0));
 	compOutDoorCollision->SetRelativeScale3D(FVector(5.5,8.5,8.8));
 
 	//InDoorCollision
 	compIndoorCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("InDoorCollision"));
-	compIndoorCollision->SetupAttachment(RootComponent);
+	compIndoorCollision->SetupAttachment(GetRootComponent());
 	compIndoorCollision->SetRelativeLocation(FVector(-773, 0, 0));
 	compIndoorCollision->SetRelativeScale3D(FVector(3.6, 5, 5));
 
 	//FlyCollision
 	compFlyCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("FlyCollision"));
-	compFlyCollision->SetupAttachment(RootComponent);
+	compFlyCollision->SetupAttachment(GetRootComponent());
 	compFlyCollision->SetRelativeLocation(FVector(-1298, 0, 0));
 	compFlyCollision->SetRelativeScale3D(FVector(1, 4.4, 4.5));
 
 	//WalkingCollision
 	compWalkCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("WalkCollision"));
-	compWalkCollision->SetupAttachment(RootComponent);
+	compWalkCollision->SetupAttachment(GetRootComponent());
 	compWalkCollision->SetRelativeLocation(FVector(-697, 0, 0));
 	compWalkCollision->SetRelativeScale3D(FVector(1, 4.4, 4.5));
 
@@ -106,13 +107,39 @@ ASpaceShip::ASpaceShip()
 void ASpaceShip::BeginPlay()
 {
 	Super::BeginPlay();
+
+	ExteriorDoorInitLocation = compExteriorDoor->GetComponentLocation();
+	InteriorDoorInitLocation = compInteriorDoor->GetComponentLocation();
+
+	compFlyCollision->OnComponentBeginOverlap.AddDynamic(this, &ASpaceShip::OnBeginOverlap_Walk2Fly);
+	compWalkCollision->OnComponentBeginOverlap.AddDynamic(this, &ASpaceShip::OnBeginOverlap_Fly2Walk);
+
 	
 }
 
-// Called every frame
-void ASpaceShip::Tick(float DeltaTime)
+void ASpaceShip::OnBeginOverlap_Walk2Fly(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	Super::Tick(DeltaTime);
+	AVRPlayer* VRPlayer = Cast<AVRPlayer>(OtherActor);
+	if (VRPlayer != nullptr)
+	{
+		UCharacterMovementComponent* MovementComponent = VRPlayer->GetCharacterMovement();
+		if (MovementComponent->IsWalking())
+		{
+			MovementComponent->SetMovementMode(EMovementMode::MOVE_Flying);
+		}
+	}
+}
 
+void ASpaceShip::OnBeginOverlap_Fly2Walk(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	AVRPlayer* VRPlayer = Cast<AVRPlayer>(OtherActor);
+	if (VRPlayer != nullptr)
+	{
+		UCharacterMovementComponent* MovementComponent = VRPlayer->GetCharacterMovement();
+		if (MovementComponent->IsFlying())
+		{
+			MovementComponent->SetMovementMode(EMovementMode::MOVE_Walking);
+		}
+	}
 }
 
