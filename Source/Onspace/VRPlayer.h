@@ -123,4 +123,26 @@ public:
 	UPROPERTY()
 	class AActor* GrabRightActor;
 
+	/*------------Oxygen Values-----------------*/
+
+	UPROPERTY(VisibleAnywhere, Category = "Oxygen", meta = (AllowPrivateAccess = "true"))
+	float CurrentOxygen;
+
+	UPROPERTY(VisibleAnywhere, Category = "Oxygen", meta = (AllowPrivateAccess = "true"))
+	float MaximumOxygen = 240;
+
+	UPROPERTY(VisibleAnywhere, Category = "Oxygen", meta = (AllowPrivateAccess = "true"))
+	float OxygenValue;
+
+	UPROPERTY(VisibleAnywhere, Category = "Oxygen", meta = (AllowPrivateAccess = "true"))
+	bool OxygenChargeActivate;
+
+	bool OxygenLeakSound = false;
+	float OxygenLeak = 60;
+
+	void CheckOxygenLeak();
+	void CheckOxygenCharge();
+	void IncreaseOxygen();
+	void DecreaseOxygen();
+	void CalculateOxygen(bool CurrentCondition);
 };

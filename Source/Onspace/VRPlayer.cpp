@@ -120,7 +120,7 @@ void AVRPlayer::BeginPlay()
 		}
 	}
 	
-	
+	CurrentOxygen = MaximumOxygen;
 
 }
 
@@ -258,4 +258,69 @@ void AVRPlayer::Grab_Right_Closed(const FInputActionValue& value)
 		//놓을 수 있다.
 		GrabRightActor = NULL; //놓았으니 현재 잡은 물건은 없다. 액터 정보 초기화
 	}
+}
+
+void AVRPlayer::CheckOxygenLeak()
+{
+	if (CurrentOxygen <= OxygenLeak)
+	{
+		UE_LOG(LogTemp, Display, TEXT("Oxygen Leak"));
+		// Change Color OxygenUnstableColor
+		OxygenLeakSound = true;
+		// Play Sound 2D : Oxygen Leak
+		
+		CheckOxygenCharge();
+	}
+	else
+	{
+		OxygenLeakSound = false;
+		// Change Color OxygenStableColor
+
+		CheckOxygenCharge();
+	}
+}
+
+void AVRPlayer::CheckOxygenCharge()
+{
+	if (OxygenChargeActivate)
+	{
+		IncreaseOxygen();
+	}
+	else
+	{
+		DecreaseOxygen();
+	}
+}
+
+void AVRPlayer::IncreaseOxygen()
+{
+	CalculateOxygen(true);
+}
+
+void AVRPlayer::DecreaseOxygen()
+{
+	FTimerHandle DecreaseHandle;
+
+	//GetWorldTimerManager().ClearTimer(DecreaseHandle);
+	GetWorldTimerManager().SetTimer(DecreaseHandle, FTimerDelegate::CreateLambda([this]()
+		{
+			CalculateOxygen(false);
+		}), 1.f, false);
+
+}
+
+void AVRPlayer::CalculateOxygen(bool CurrentCondition)
+{
+	CurrentOxygen = FMath::Clamp(CurrentOxygen, 0, MaximumOxygen);
+	if (CurrentCondition)
+	{
+		CurrentOxygen = CurrentOxygen + 0.5f;
+	}
+	else
+	{
+		CurrentOxygen = CurrentOxygen - 2.f;
+	}
+	OxygenValue = (CurrentOxygen / MaximumOxygen) / 10;
+
+	// Gauge Scale 3D
 }
