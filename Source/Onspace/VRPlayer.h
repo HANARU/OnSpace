@@ -26,6 +26,8 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	void ZeroGMovement();
 	
 	
 	
@@ -57,7 +59,9 @@ public:
 	//Sphere Collision - Oxygen UI Location
 	UPROPERTY(EditAnywhere, Category="MySettings|Components")
 	class USphereComponent* Sphere;
-
+	
+	UPROPERTY(EditAnywhere, Category = "Grab")
+	class AGrabGravityActor* GrabGravityActor;
 	
 	
 	/*-------------- ENHANCED INPUT ------------- */
@@ -116,12 +120,18 @@ public:
 	float MovingParam = 0.5f;
 	UPROPERTY()
 	float FlyVal = 0.0f;
+
+	UPROPERTY()
+	FVector CurrentLocation;
+
 	UPROPERTY()
 	float SphereRadius =10.0f;
 	UPROPERTY()
 	class AActor* GrabLeftActor;
 	UPROPERTY()
 	class AActor* GrabRightActor;
+
+	bool bValidGrabGravityActor = false;
 
 	/*------------Oxygen Values-----------------*/
 

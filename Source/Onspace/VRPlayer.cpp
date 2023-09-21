@@ -15,6 +15,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "I_Grab.h"
+#include "GrabGravityActor.h"
 
 // Sets default values
 AVRPlayer::AVRPlayer()
@@ -98,6 +99,8 @@ AVRPlayer::AVRPlayer()
 		IA_Grab_Right = temp_GrabRight.Object;
 	}
 
+	GrabGravityActor = nullptr;
+
 }
 
 // Called when the game starts or when spawned
@@ -120,6 +123,8 @@ void AVRPlayer::BeginPlay()
 		}
 	}
 	
+	CurrentLocation = this->GetActorLocation();
+
 	CurrentOxygen = MaximumOxygen;
 
 }
@@ -129,6 +134,7 @@ void AVRPlayer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	//CheckOxygenLeak();
 }
 
 // Called to bind functionality to input
@@ -153,6 +159,27 @@ void AVRPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 		EnhancedInputComponent->BindAction(IA_Grab_Right, ETriggerEvent::Started, this, &AVRPlayer::Grab_Right_Started);
 		EnhancedInputComponent->BindAction(IA_Grab_Right, ETriggerEvent::Completed, this, &AVRPlayer::Grab_Right_Closed);
 	}
+}
+
+void AVRPlayer::ZeroGMovement()
+{
+	CurrentLocation = FMath::VInterpTo(CurrentLocation, GetActorLocation(), 0.f, 1.f);
+	if (GrabGravityActor != nullptr)
+	{
+		FVector	LocationWhenGrabbed = GetActorLocation() + (GrabGravityActor->GrabLocation - GrabGravityActor->GrabbingController->GetComponentLocation());
+		SetActorLocation(LocationWhenGrabbed);
+		bValidGrabGravityActor = false;
+	}
+	else
+	{
+		if (bValidGrabGravityActor == false)
+		{
+			GetCharacterMovement()->Velocity = (GetActorLocation() - CurrentLocation) * 5.f;
+			bValidGrabGravityActor = true;
+		}
+	}
+
+
 }
 
 void AVRPlayer::Move(const FInputActionValue& value)
@@ -208,6 +235,13 @@ void AVRPlayer::Grab_Left_Started(const FInputActionValue& value)
 			GrabLeftActor  = OverlappingActors[i]; //액터 정보 저장
 			break; //한 손에 한개만 집을 거니까 찾았으면 해당 반복문을 종료시킨다.
 		}
+		AGrabGravityActor* GrabActor = Cast<AGrabGravityActor>(OverlappingActors[i]);
+		if (GrabActor != nullptr)
+		{
+			GrabGravityActor = GrabActor;
+			GrabGravityActor->GrabbingController = motionControllerLeft;
+			GrabGravityActor->GrabLocation = motionControllerLeft->GetComponentLocation();
+		}
 	}
 	
 }
@@ -219,6 +253,11 @@ void AVRPlayer::Grab_Left_Closed(const FInputActionValue& value)
 		Cast<II_Grab>(GrabLeftActor)->Release(motionControllerLeft);
 		//놓을 수 있다.
 		GrabLeftActor = NULL; //놓았으니 현재 잡은 물건은 없다. 액터 정보 초기화
+	}
+	if (GrabGravityActor != nullptr)
+	{
+		GrabGravityActor->GrabbingController = nullptr;
+		GrabGravityActor = nullptr;
 	}
 }
 
@@ -247,6 +286,13 @@ void AVRPlayer::Grab_Right_Started(const FInputActionValue& value)
 			GrabRightActor = OverlappingActors[i]; //액터 정보 저장
 			break; //한 손에 한개만 집을 거니까 찾았으면 해당 반복문을 종료시킨다.
 		}
+		AGrabGravityActor* GrabActor = Cast<AGrabGravityActor>(OverlappingActors[i]);
+		if (GrabActor != nullptr)
+		{
+			GrabGravityActor = GrabActor;
+			GrabGravityActor->GrabbingController = motionControllerRight;
+			GrabGravityActor->GrabLocation = motionControllerRight->GetComponentLocation();
+		}
 	}
 }
 
@@ -257,6 +303,11 @@ void AVRPlayer::Grab_Right_Closed(const FInputActionValue& value)
 		Cast<II_Grab>(GrabRightActor)->Release(motionControllerRight);
 		//놓을 수 있다.
 		GrabRightActor = NULL; //놓았으니 현재 잡은 물건은 없다. 액터 정보 초기화
+	}
+	if (GrabGravityActor != nullptr)
+	{
+		GrabGravityActor->GrabbingController = nullptr;
+		GrabGravityActor = nullptr;
 	}
 }
 
