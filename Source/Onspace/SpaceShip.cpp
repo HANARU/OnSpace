@@ -126,6 +126,7 @@ void ASpaceShip::OnBeginOverlap_Walk2Fly(UPrimitiveComponent* OverlappedComp, AA
 		if (MovementComponent->IsWalking())
 		{
 			MovementComponent->SetMovementMode(EMovementMode::MOVE_Flying);
+			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Overlap"));
 		}
 	}
 }

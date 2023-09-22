@@ -205,7 +205,7 @@ void AVRPlayer::Move(const FInputActionValue& value)
 	AddMovementInput(compCam->GetForwardVector(), Movement.Y * MovingParam);
 	AddMovementInput(compCam->GetRightVector(), Movement.X*MovingParam);
 
-	GEngine->AddOnScreenDebugMessage(-1, 0.001f, FColor::Blue, TEXT("Log"));
+	//GEngine->AddOnScreenDebugMessage(-1, 0.001f, FColor::Blue, TEXT("Log"));
 }
 
 

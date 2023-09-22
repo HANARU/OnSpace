@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/StaticMeshComponent.h"
+#include "Delegates/DelegateCombinations.h"
 #include "InventoryComponent.generated.h"
 
 /**
@@ -16,7 +17,30 @@ class ONSPACE_API UInventoryComponent : public UStaticMeshComponent
 	UInventoryComponent();
 	virtual void BeginPlay() override;
 
+	protected:
+	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction) override;
+
 public:
-	/*class UInventoryComponent* InventoryComponent;*/
+
+	/* Delegate */
 	
+	DECLARE_DYNAMIC_DELEGATE_OneParam(FOnComponentBeginOverlap,AActor*, OtherActor);
+	DECLARE_DYNAMIC_DELEGATE_OneParam(FOnComponentEndOverlap, AActor*, OtherActor);
+
+	FOnComponentBeginOverlap OnComponentBeginOverlap;
+	FOnComponentEndOverlap OnComponentEndOverlap;
+
+
+	/*class UInventoryComponent* InventoryComponent;*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Controller")
+	class UMotionControllerComponent* Controller2Ignore;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+	class AItemBase* GrabActor;
+
+	UFUNCTION(BlueprintCallable)
+	void BeginOverlap(AActor* OtherActor);
+	
+	UFUNCTION(BlueprintCallable)
+	void EndOverlap(AActor* OtherActor);
 };
