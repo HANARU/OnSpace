@@ -16,7 +16,8 @@ public:
 	FString ItemName;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (DisplayName = "ItemMesh"))
 	TObjectPtr<UStaticMesh> ItemMesh;
-
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (DisplayName = "Eatable"))
+	bool CanEat;
 };
 
 
@@ -40,6 +41,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
 	FName objectName;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	bool CanEatThis;
+
 	FItemData* CurrentItemData;
 	UDataTable* CurrentItemTable;
 
@@ -55,5 +59,9 @@ public:
 
 	void ExecuteRelease(UMotionControllerComponent* MotionControllerToRelease);
 
+	UFUNCTION()
 	void OnItemBodyBeginOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnBeginOverlap_CanEat(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };

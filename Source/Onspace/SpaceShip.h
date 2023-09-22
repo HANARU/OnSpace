@@ -38,6 +38,9 @@ public:
 	UPROPERTY(EditAnywhere,Category="MySettings")
 	class UBoxComponent* compWalkCollision;
 
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UBoxComponent* HiddenInterior;
+
 
 //--------StaticMesh
 //spaceship ¿Ü°ü
@@ -74,4 +77,10 @@ public:
 
 	UFUNCTION()
 	void OnBeginOverlap_Fly2Walk(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnBeginOverlap_HiddenInterior(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlap_HiddenInterior(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 };

@@ -35,6 +35,7 @@ ASpaceShip::ASpaceShip()
 	//Interior Component
 	compInterior = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Interior"));
 	compInterior->SetupAttachment(BaseComponent);
+	compInterior->SetVisibility(true);
 	ConstructorHelpers::FObjectFinder<UStaticMesh> tempInterior(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PlayerShip_Interior/SM_SpaceCruiser_FullInterior_Simple.SM_SpaceCruiser_FullInterior_Simple'"));
 	if (tempInterior.Succeeded())
 	{
@@ -79,28 +80,36 @@ ASpaceShip::ASpaceShip()
 	//OutDoorCollision
 	compOutDoorCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("OutDoorCollision"));
 	compOutDoorCollision->SetupAttachment(GetRootComponent());
+	compOutDoorCollision->SetCollisionProfileName(TEXT("AreaCollision"));
 	compOutDoorCollision->SetRelativeLocation(FVector(-1317.0f,-5,0));
 	compOutDoorCollision->SetRelativeScale3D(FVector(5.5,8.5,8.8));
 
 	//InDoorCollision
 	compIndoorCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("InDoorCollision"));
 	compIndoorCollision->SetupAttachment(GetRootComponent());
+	compIndoorCollision->SetCollisionProfileName(TEXT("AreaCollision"));
 	compIndoorCollision->SetRelativeLocation(FVector(-773, 0, 0));
 	compIndoorCollision->SetRelativeScale3D(FVector(3.6, 5, 5));
 
 	//FlyCollision
 	compFlyCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("FlyCollision"));
 	compFlyCollision->SetupAttachment(GetRootComponent());
+	compFlyCollision->SetCollisionProfileName(TEXT("AreaCollision"));
 	compFlyCollision->SetRelativeLocation(FVector(-1298, 0, 0));
 	compFlyCollision->SetRelativeScale3D(FVector(1, 4.4, 4.5));
 
 	//WalkingCollision
 	compWalkCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("WalkCollision"));
 	compWalkCollision->SetupAttachment(GetRootComponent());
+	compWalkCollision->SetCollisionProfileName(TEXT("AreaCollision"));
 	compWalkCollision->SetRelativeLocation(FVector(-697, 0, 0));
 	compWalkCollision->SetRelativeScale3D(FVector(1, 4.4, 4.5));
 
-
+	HiddenInterior = CreateDefaultSubobject<UBoxComponent>(TEXT("HiddenCollision"));
+	HiddenInterior->SetupAttachment(GetRootComponent());
+	HiddenInterior->SetCollisionProfileName(TEXT("AreaCollision"));
+	HiddenInterior->SetRelativeLocation(FVector(-700, 0, 0));
+	HiddenInterior->SetBoxExtent(FVector(2000, 2000, 1200));
 }
 
 // Called when the game starts or when spawned
@@ -114,6 +123,9 @@ void ASpaceShip::BeginPlay()
 	compFlyCollision->OnComponentBeginOverlap.AddDynamic(this, &ASpaceShip::OnBeginOverlap_Walk2Fly);
 	compWalkCollision->OnComponentBeginOverlap.AddDynamic(this, &ASpaceShip::OnBeginOverlap_Fly2Walk);
 
+	HiddenInterior->OnComponentBeginOverlap.AddDynamic(this, &ASpaceShip::OnBeginOverlap_HiddenInterior);
+	HiddenInterior->OnComponentEndOverlap.AddDynamic(this, &ASpaceShip::OnEndOverlap_HiddenInterior);
+
 	
 }
 
@@ -122,6 +134,7 @@ void ASpaceShip::OnBeginOverlap_Walk2Fly(UPrimitiveComponent* OverlappedComp, AA
 	AVRPlayer* VRPlayer = Cast<AVRPlayer>(OtherActor);
 	if (VRPlayer != nullptr)
 	{
+		VRPlayer->OxygenChargeActivate = false;
 		UCharacterMovementComponent* MovementComponent = VRPlayer->GetCharacterMovement();
 		if (MovementComponent->IsWalking())
 		{
@@ -136,11 +149,33 @@ void ASpaceShip::OnBeginOverlap_Fly2Walk(UPrimitiveComponent* OverlappedComp, AA
 	AVRPlayer* VRPlayer = Cast<AVRPlayer>(OtherActor);
 	if (VRPlayer != nullptr)
 	{
+		VRPlayer->OxygenChargeActivate = true;
 		UCharacterMovementComponent* MovementComponent = VRPlayer->GetCharacterMovement();
 		if (MovementComponent->IsFlying())
 		{
 			MovementComponent->SetMovementMode(EMovementMode::MOVE_Walking);
 		}
+	}
+}
+
+void ASpaceShip::OnBeginOverlap_HiddenInterior(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	AVRPlayer* VRPlayer = Cast<AVRPlayer>(OtherActor);
+	if (VRPlayer != nullptr)
+	{
+		compInterior->SetVisibility(true);
+		UE_LOG(LogTemp, Log, TEXT("Interior Show"));
+	}
+}
+
+void ASpaceShip::OnEndOverlap_HiddenInterior(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	AVRPlayer* VRPlayer = Cast<AVRPlayer>(OtherActor);
+	if (VRPlayer != nullptr)
+	{
+		compInterior->SetVisibility(false);
+		
+		UE_LOG(LogTemp, Log, TEXT("Interior Hidden"));
 	}
 }
 

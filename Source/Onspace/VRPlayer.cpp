@@ -18,6 +18,7 @@
 #include "I_Grab.h"
 #include "GrabGravityActor.h"
 #include "InventoryComponent.h"
+#include "GaugeBase.h"
 #include "Materials/Material.h"
 
 // Sets default values
@@ -33,7 +34,8 @@ AVRPlayer::AVRPlayer()
 	/*Body Skeletal Component*/
 	compSkeletal = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("compSkeletal"));
 	compSkeletal->SetupAttachment(compCam);
-	ConstructorHelpers::FObjectFinder<USkeletalMesh> tempSkel (TEXT("/Script/Engine.SkeletalMesh'/Game/4_SK/VRPlayer/Asset/Model/SK_Player.SK_Player'"));
+	compSkeletal->SetCollisionProfileName(TEXT("PlayerBody"));
+	ConstructorHelpers::FObjectFinder<USkeletalMesh> tempSkel (TEXT("/Script/Engine.SkeletalMesh'/Game/4_SK/VRPlayer/Asset/Mesh/SK_Player.SK_Player'"));
 	if (tempSkel.Succeeded())
 	{
 		compSkeletal->SetSkeletalMesh(tempSkel.Object);
@@ -45,12 +47,14 @@ AVRPlayer::AVRPlayer()
 	//LEFT
 	motionControllerLeft = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("motionControllerLeft"));
 	motionControllerLeft->SetupAttachment(RootComponent);
+	motionControllerLeft->SetCollisionProfileName(TEXT("PlayerHand"));
 	motionControllerLeft->SetTrackingMotionSource(FName("Left"));
 	
 	motionControllerLeft->SetRelativeLocation(FVector(30,20,0));
 	//RIGHT
 	motionControllerRight = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("motionControllerRight"));
 	motionControllerRight->SetupAttachment(RootComponent);
+	motionControllerRight->SetCollisionProfileName(TEXT("PlayerHand"));
 	motionControllerRight->SetTrackingMotionSource(FName(
 	"Right"));
 	motionControllerRight->SetRelativeLocation(FVector(30,-20,0));
@@ -75,10 +79,14 @@ AVRPlayer::AVRPlayer()
 	Sphere->SetSphereRadius(5.0f);
 
 	/* Inventory */
-	/*InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
+	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 	InventoryComponent->SetupAttachment(motionControllerLeft);
+	InventoryComponent->SetCollisionProfileName(TEXT("Inventory"));
 	InventoryComponent->SetRelativeLocation(FVector(-60,0,0));
-	InventoryComponent->SetRelativeScale3D(FVector(0.1));*/
+	InventoryComponent->SetRelativeScale3D(FVector(0.1));
+
+	OxygenGauge = CreateDefaultSubobject<UGaugeBase>(TEXT("Oxygen"));
+	OxygenGauge->SetCollisionProfileName(TEXT("NoCollision"));
 
 	//CharacterMovement value save
 	cm = this->GetCharacterMovement();
@@ -142,6 +150,8 @@ void AVRPlayer::BeginPlay()
 	CurrentLocation = this->GetActorLocation();
 
 	CurrentOxygen = MaximumOxygen;
+
+	OxygenGauge->AttachToComponent(compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(TEXT("Gauge")));
 
 }
 
@@ -327,10 +337,13 @@ void AVRPlayer::Grab_Right_Closed(const FInputActionValue& value)
 
 void AVRPlayer::CheckOxygenLeak()
 {
+	FString CurrentOxygenString = FString::SanitizeFloat(CurrentOxygen);
+	GEngine->AddOnScreenDebugMessage(-1, 0.001f, FColor::Yellow, CurrentOxygenString);
 	if (CurrentOxygen <= OxygenLeak)
 	{
 		UE_LOG(LogTemp, Display, TEXT("Oxygen Leak"));
 		// Change Color OxygenUnstableColor
+		OxygenGauge->SetVectorParameterValueOnMaterials(TEXT("BaseColor"), OxygenLeakColor);
 		OxygenLeakSound = true;
 		// Play Sound 2D : Oxygen Leak
 		
@@ -340,6 +353,7 @@ void AVRPlayer::CheckOxygenLeak()
 	{
 		OxygenLeakSound = false;
 		// Change Color OxygenStableColor
+		OxygenGauge->SetVectorParameterValueOnMaterials(TEXT("BaseColor"), OxygenEnoughColor);
 
 		CheckOxygenCharge();
 	}
@@ -364,28 +378,23 @@ void AVRPlayer::IncreaseOxygen()
 
 void AVRPlayer::DecreaseOxygen()
 {
-	FTimerHandle DecreaseHandle;
-
-	//GetWorldTimerManager().ClearTimer(DecreaseHandle);
-	GetWorldTimerManager().SetTimer(DecreaseHandle, FTimerDelegate::CreateLambda([this]()
-		{
-			CalculateOxygen(false);
-		}), 1.f, false);
-
+	CalculateOxygen(false);
 }
 
 void AVRPlayer::CalculateOxygen(bool CurrentCondition)
 {
 	CurrentOxygen = FMath::Clamp(CurrentOxygen, 0, MaximumOxygen);
-	if (CurrentCondition)
+	if (CurrentCondition)	// 魂家 焊面
 	{
-		CurrentOxygen = CurrentOxygen + 0.5f;
+		CurrentOxygen = CurrentOxygen + 0.1f;
+
 	}
-	else
+	else					// 魂家 家厚
 	{
-		CurrentOxygen = CurrentOxygen - 2.f;
+		CurrentOxygen = CurrentOxygen - 0.04f;
 	}
 	OxygenValue = (CurrentOxygen / MaximumOxygen) / 10;
 
 	// Gauge Scale 3D
+	OxygenGauge->SetRelativeScale3D(FVector(0.05, 0.05, OxygenValue));
 }

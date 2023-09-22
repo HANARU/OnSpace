@@ -35,6 +35,9 @@ ACraftTable::ACraftTable()
 void ACraftTable::BeginPlay()
 {
 	Super::BeginPlay();
+
+	ItemOverlapVolume->OnComponentBeginOverlap.AddDynamic(this, &ACraftTable::OnBeginOverlap_ItemVolume);
+	
 	
 }
 
@@ -69,11 +72,15 @@ void ACraftTable::OnBeginOverlap_ItemVolume(UPrimitiveComponent* OverlappedComp,
 		if (ResourceName == TEXT("Metal"))
 		{
 			CurrentNum_Metal++;
+			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Metal Overlap"));
+			UE_LOG(LogTemp, Log, TEXT("Metal Overlap"));
 			CheckRecipe_Inductor();
 		}
 		else if (ResourceName == TEXT("Plastic"))
 		{
 			CurrentNum_Plastic++;
+			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Plastic Overlap"));
+			UE_LOG(LogTemp, Log, TEXT("Plastic Overlap"));
 			CheckRecipe_Inductor();
 		}
 	}
@@ -85,6 +92,7 @@ void ACraftTable::CheckRecipe_Inductor()
 	{
 		Resource->Destroy();
 		//Spawn Actor
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Recipe Checked! Ready for make Object"));
 		UE_LOG(LogTemp, Log, TEXT("Recipe Checked! Ready for make Object"));
 		//Destroy Widget;
 	}

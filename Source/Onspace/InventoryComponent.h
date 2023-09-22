@@ -9,8 +9,8 @@
 
 	/* Delegate */
 
-DECLARE_DYNAMIC_DELEGATE_OneParam(FOnComponentBeginOverlap, AActor*, OtherActor);
-DECLARE_DYNAMIC_DELEGATE_OneParam(FOnComponentEndOverlap, AActor*, OtherActor);
+//DECLARE_DYNAMIC_DELEGATE_OneParam(FOnComponentBeginOverlap, AActor*, OtherActor);
+//DECLARE_DYNAMIC_DELEGATE_OneParam(FOnComponentEndOverlap, AActor*, OtherActor);
 
 /**
  * 
@@ -27,8 +27,8 @@ class ONSPACE_API UInventoryComponent : public UStaticMeshComponent
 
 public:
 
-	FOnComponentBeginOverlap OnComponentBeginOverlap;
-	FOnComponentEndOverlap OnComponentEndOverlap;
+	//FOnComponentBeginOverlap OnComponentBeginOverlap;
+	//FOnComponentEndOverlap OnComponentEndOverlap;
 
 
 	/*class UInventoryComponent* InventoryComponent;*/
@@ -38,9 +38,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 	class AItemBase* GrabActor;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION()
+	void OnBeginOverlap_Item(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlap_Item(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+	/*UFUNCTION(BlueprintCallable)
 	void BeginOverlap(AActor* OtherActor);
 	
 	UFUNCTION(BlueprintCallable)
-	void EndOverlap(AActor* OtherActor);
+	void EndOverlap(AActor* OtherActor);*/
 };

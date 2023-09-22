@@ -1,8 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "InventoryComponent.h"
-/*#include "Materials/Material.h"*/
 #include "ItemBase.h"
 #include "MotionControllerComponent.h"
 
@@ -23,6 +19,8 @@ UInventoryComponent::UInventoryComponent()
 		this->SetMaterial(0, Temp_InventoryMat.Object);
 	}
 
+	this->SetCollisionProfileName(TEXT("Inventory"));
+
 }
 
 void UInventoryComponent::BeginPlay()
@@ -30,14 +28,20 @@ void UInventoryComponent::BeginPlay()
 	Super::BeginPlay();
 	
 	//Delegates Bind
-	OnComponentBeginOverlap.BindDynamic(this, &UInventoryComponent::BeginOverlap);
-	OnComponentEndOverlap.BindDynamic(this, &UInventoryComponent::EndOverlap);
+	//OnComponentBeginOverlap.BindUFunction(this, "BeginOverlap");
+	//OnComponentEndOverlap.BindUFunction(this, "EndOverlap");
+
+	this->OnComponentBeginOverlap.AddDynamic(this, &UInventoryComponent::OnBeginOverlap_Item);
+	this->OnComponentEndOverlap.AddDynamic(this, &UInventoryComponent::OnEndOverlap_Item);
+
 }
 
 void UInventoryComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	if (GrabActor != nullptr)
 	{
+		FString ObjectName = GrabActor->GetName();
+		GEngine->AddOnScreenDebugMessage(-1, 0.001f, FColor::Yellow, ObjectName);
 		if (GrabActor->MotionController == nullptr)
 		{
 			GrabActor->AttachToComponent(this, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
@@ -45,21 +49,32 @@ void UInventoryComponent::TickComponent(float DeltaTime, enum ELevelTick TickTyp
 	}
 }
 
-
-void UInventoryComponent::BeginOverlap(AActor* OtherActor)
+void UInventoryComponent::OnBeginOverlap_Item(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	UE_LOG(LogTemp,Warning,TEXT("Inventory Begin Overlap!"));
-	GEngine->AddOnScreenDebugMessage(-1,5.f,FColor::Red,TEXT("Inventory Begin Overlap!"));
+	//GEngine->AddOnScreenDebugMessage(-1,5.f,FColor::Red,TEXT("Inventory Begin Overlap!"));
 
 	if (GrabActor == nullptr)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("GrabActor NULL"));
 		AItemBase* Item = Cast<AItemBase>(OtherActor);
-		if (Item->MotionController != nullptr)
+		if (Item != nullptr)
 		{
-			if (Controller2Ignore != nullptr)
+			UE_LOG(LogTemp, Warning, TEXT("Item Not NULL"));
+			if (Item->MotionController != nullptr)
 			{
-				if (Item->MotionController != Controller2Ignore)
+				UE_LOG(LogTemp, Warning, TEXT("MotionController Not NULL"));
+				if (Controller2Ignore != nullptr)
 				{
+					UE_LOG(LogTemp, Warning, TEXT("Not Ignore"));
+					if (Item->MotionController != Controller2Ignore)
+					{
+						GrabActor = Item;
+					}
+				}
+				else
+				{
+					UE_LOG(LogTemp, Warning, TEXT("Ignore"));
 					GrabActor = Item;
 				}
 			}
@@ -67,12 +82,48 @@ void UInventoryComponent::BeginOverlap(AActor* OtherActor)
 	}
 }
 
-void UInventoryComponent::EndOverlap(AActor* OtherActor)
+void UInventoryComponent::OnEndOverlap_Item(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Inventory End Overlap!"));
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("Inventory End Overlap!"));
+	//UE_LOG(LogTemp, Warning, TEXT("Inventory End Overlap!"));
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("Inventory End Overlap!"));
 	if (GrabActor == OtherActor)
 	{
 		GrabActor = nullptr;
 	}
 }
+
+
+//void UInventoryComponent::BeginOverlap(AActor* OtherActor)
+//{
+//	//UE_LOG(LogTemp,Warning,TEXT("Inventory Begin Overlap!"));
+//	//GEngine->AddOnScreenDebugMessage(-1,5.f,FColor::Red,TEXT("Inventory Begin Overlap!"));
+//
+//	if (GrabActor == nullptr)
+//	{
+//		AItemBase* Item = Cast<AItemBase>(OtherActor);
+//		if (Item->MotionController != nullptr)
+//		{
+//			if (Controller2Ignore != nullptr)
+//			{
+//				if (Item->MotionController != Controller2Ignore)
+//				{
+//					GrabActor = Item;
+//				}
+//			}
+//			else
+//			{
+//				GrabActor = Item;
+//			}
+//		}
+//	}
+//}
+//
+//void UInventoryComponent::EndOverlap(AActor* OtherActor)
+//{
+//	//UE_LOG(LogTemp, Warning, TEXT("Inventory End Overlap!"));
+//	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("Inventory End Overlap!"));
+//	if (GrabActor == OtherActor)
+//	{
+//		GrabActor = nullptr;
+//	}
+//}

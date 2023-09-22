@@ -26,10 +26,6 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	void ZeroGMovement();
-	
-	
 	
 	/*----------Components---------------*/
 	//Ä«¸Þ¶ó
@@ -66,6 +62,10 @@ public:
 	//InventoryComp
 	UPROPERTY(EditAnywhere, Category = "Inventory")
 	class UInventoryComponent* InventoryComponent;
+
+
+	/*FLinearColor OxygenEnoughColor = FLinearColor(0.066667, 0.211765, 0.294118, 1);
+	FLinearColor OxygenLeakColor = FLinearColor(0.913726, 0.070588, 0.094118, 1);*/
 
 
 	/*-------------- ENHANCED INPUT ------------- */
@@ -148,8 +148,14 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Oxygen", meta = (AllowPrivateAccess = "true"))
 	float OxygenValue;
 
-	UPROPERTY(VisibleAnywhere, Category = "Oxygen", meta = (AllowPrivateAccess = "true"))
-	bool OxygenChargeActivate;
+	UPROPERTY(EditAnywhere, Category = "Oxygen", meta = (AllowPrivateAccess = "true"))
+	bool OxygenChargeActivate = true;
+
+	UPROPERTY(EditAnywhere, Category = "System")
+	class UGaugeBase* OxygenGauge;
+
+	FVector OxygenEnoughColor = FVector(0.066667, 0.211765, 0.294118);
+	FVector OxygenLeakColor = FVector(0.913726, 0.070588, 0.094118);
 
 	bool OxygenLeakSound = false;
 	float OxygenLeak = 60;
@@ -159,4 +165,7 @@ public:
 	void IncreaseOxygen();
 	void DecreaseOxygen();
 	void CalculateOxygen(bool CurrentCondition);
+
+
+	void ZeroGMovement();
 };
