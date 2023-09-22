@@ -7,6 +7,11 @@
 #include "Delegates/DelegateCombinations.h"
 #include "InventoryComponent.generated.h"
 
+	/* Delegate */
+
+DECLARE_DYNAMIC_DELEGATE_OneParam(FOnComponentBeginOverlap, AActor*, OtherActor);
+DECLARE_DYNAMIC_DELEGATE_OneParam(FOnComponentEndOverlap, AActor*, OtherActor);
+
 /**
  * 
  */
@@ -21,11 +26,6 @@ class ONSPACE_API UInventoryComponent : public UStaticMeshComponent
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction) override;
 
 public:
-
-	/* Delegate */
-	
-	DECLARE_DYNAMIC_DELEGATE_OneParam(FOnComponentBeginOverlap,AActor*, OtherActor);
-	DECLARE_DYNAMIC_DELEGATE_OneParam(FOnComponentEndOverlap, AActor*, OtherActor);
 
 	FOnComponentBeginOverlap OnComponentBeginOverlap;
 	FOnComponentEndOverlap OnComponentEndOverlap;

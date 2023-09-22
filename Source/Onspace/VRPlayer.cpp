@@ -75,10 +75,10 @@ AVRPlayer::AVRPlayer()
 	Sphere->SetSphereRadius(5.0f);
 
 	/* Inventory */
-	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
+	/*InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 	InventoryComponent->SetupAttachment(motionControllerLeft);
 	InventoryComponent->SetRelativeLocation(FVector(-60,0,0));
-	InventoryComponent->SetRelativeScale3D(FVector(0.1));
+	InventoryComponent->SetRelativeScale3D(FVector(0.1));*/
 
 	//CharacterMovement value save
 	cm = this->GetCharacterMovement();

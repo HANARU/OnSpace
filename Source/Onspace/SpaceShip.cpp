@@ -35,7 +35,7 @@ ASpaceShip::ASpaceShip()
 	//Interior Component
 	compInterior = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Interior"));
 	compInterior->SetupAttachment(BaseComponent);
-	ConstructorHelpers::FObjectFinder<UStaticMesh> tempInterior(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PlayerShip_Interior/SM_SpaceCruiser_FullInterior.SM_SpaceCruiser_FullInterior'"));
+	ConstructorHelpers::FObjectFinder<UStaticMesh> tempInterior(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PlayerShip_Interior/SM_SpaceCruiser_FullInterior_Simple.SM_SpaceCruiser_FullInterior_Simple'"));
 	if (tempInterior.Succeeded())
 	{
 		compInterior->SetStaticMesh(tempInterior.Object);
@@ -54,7 +54,7 @@ ASpaceShip::ASpaceShip()
 
 	//Lamps Comp
 	Lamps = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Lamps"));
-	compInterior->SetupAttachment(BaseComponent);
+	Lamps->SetupAttachment(BaseComponent);
 	ConstructorHelpers::FObjectFinder<UStaticMesh> tempLamps(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PlayerShip_InteriorLamps/SM_DCruiserInterior_Lamps.SM_DCruiserInterior_Lamps'"));
 	if (tempLamps.Succeeded())
 	{
@@ -64,7 +64,7 @@ ASpaceShip::ASpaceShip()
 
 	//Dining Lamp comp
 	diningRoomLamp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("diningRoomLamp"));
-	compInterior->SetupAttachment(GetRootComponent());
+	diningRoomLamp->SetupAttachment(GetRootComponent());
 	/*ConstructorHelpers::FObjectFinder<UStaticMesh> tempdiningRoomLamp(TEXT(""));*/
 // 	if (tempLamps.Succeeded())
 // 	{
