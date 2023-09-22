@@ -13,5 +13,10 @@ UCLASS()
 class ONSPACE_API UInventoryComponent : public UStaticMeshComponent
 {
 	GENERATED_BODY()
+	UInventoryComponent();
+	virtual void BeginPlay() override;
+
+public:
+	/*class UInventoryComponent* InventoryComponent;*/
 	
 };

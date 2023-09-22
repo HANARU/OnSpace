@@ -63,7 +63,11 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Grab")
 	class AGrabGravityActor* GrabGravityActor;
 	
-	
+	//InventoryComp
+	UPROPERTY(EditAnywhere, Category = "Inventory")
+	class UInventoryComponent* InventoryComponent;
+
+
 	/*-------------- ENHANCED INPUT ------------- */
 	//Context
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))

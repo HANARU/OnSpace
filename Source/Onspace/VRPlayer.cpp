@@ -17,6 +17,8 @@
 #include "Kismet/KismetStringLibrary.h"
 #include "I_Grab.h"
 #include "GrabGravityActor.h"
+#include "InventoryComponent.h"
+#include "Materials/Material.h"
 
 // Sets default values
 AVRPlayer::AVRPlayer()
@@ -72,6 +74,13 @@ AVRPlayer::AVRPlayer()
 	Sphere->SetRelativeLocation(FVector(10,0,-3));
 	Sphere->SetSphereRadius(5.0f);
 
+	/* Inventory */
+	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
+	InventoryComponent->SetupAttachment(motionControllerLeft);
+	InventoryComponent->SetRelativeLocation(FVector(-60,0,0));
+	InventoryComponent->SetRelativeScale3D(FVector(0.1));
+
+	//CharacterMovement value save
 	cm = this->GetCharacterMovement();
 
 	/*Enhanced Input*/
