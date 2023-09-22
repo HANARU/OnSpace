@@ -11,17 +11,6 @@ AItemBase::AItemBase()
 	ItemBody = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Item"));
 
 	RootComponent = ItemBody;
-
-	/*UVRInstance* Instance = Cast<UVRInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
-	if (Instance == nullptr)	return;
-
-	CurrentItemData = Instance->GetItemData(objectName);
-	if (CurrentItemData)
-	{
-		objectName = CurrentItemData->ItemName;
-
-		ItemBody->SetStaticMesh(CurrentItemData->ItemMesh);
-	}*/
 }
 
 void AItemBase::BeginPlay()
