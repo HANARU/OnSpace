@@ -79,11 +79,17 @@ AVRPlayer::AVRPlayer()
 	Sphere->SetSphereRadius(5.0f);
 
 	/* Inventory */
-	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
-	InventoryComponent->SetupAttachment(motionControllerLeft);
-	InventoryComponent->SetCollisionProfileName(TEXT("Inventory"));
-	InventoryComponent->SetRelativeLocation(FVector(-60,0,0));
-	InventoryComponent->SetRelativeScale3D(FVector(0.1));
+	InventoryComponent1 = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent1"));
+	InventoryComponent1->SetupAttachment(motionControllerLeft);
+	InventoryComponent1->SetCollisionProfileName(TEXT("Inventory"));
+	InventoryComponent1->SetRelativeLocation(FVector(-60,0,0));
+	InventoryComponent1->SetRelativeScale3D(FVector(0.05));
+
+	InventoryComponent2 = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent2"));
+	InventoryComponent2->SetupAttachment(motionControllerLeft);
+	InventoryComponent2->SetCollisionProfileName(TEXT("Inventory"));
+	InventoryComponent2->SetRelativeLocation(FVector(-40, 0, 0));
+	InventoryComponent2->SetRelativeScale3D(FVector(0.05));
 
 	OxygenGauge = CreateDefaultSubobject<UGaugeBase>(TEXT("Oxygen"));
 	OxygenGauge->SetCollisionProfileName(TEXT("NoCollision"));

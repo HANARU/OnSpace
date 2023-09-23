@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -13,15 +11,12 @@ class ONSPACE_API AVRPlayer : public ACharacter
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this character's properties
 	AVRPlayer();
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
@@ -61,11 +56,10 @@ public:
 	
 	//InventoryComp
 	UPROPERTY(EditAnywhere, Category = "Inventory")
-	class UInventoryComponent* InventoryComponent;
-
-
-	/*FLinearColor OxygenEnoughColor = FLinearColor(0.066667, 0.211765, 0.294118, 1);
-	FLinearColor OxygenLeakColor = FLinearColor(0.913726, 0.070588, 0.094118, 1);*/
+	class UInventoryComponent* InventoryComponent1;
+	
+	UPROPERTY(EditAnywhere, Category = "Inventory")
+	class UInventoryComponent* InventoryComponent2;
 
 
 	/*-------------- ENHANCED INPUT ------------- */

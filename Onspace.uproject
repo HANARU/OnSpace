@@ -9,7 +9,8 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
-				"Engine"
+				"Engine",
+				"UMG"
 			]
 		}
 	],
@@ -123,6 +124,7 @@
 		"WindowsNoEditor",
 		"Switch",
 		"XboxOne",
-		"XSX"
+		"XSX",
+		"HoloLens"
 	]
 }
