@@ -1,0 +1,260 @@
+TwoSided = false
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[1] =
+{
+    ReferencedTextures[0] = Texture2D'Environment/StationAndShips/Textures/Tiling/Metal/T_Metall_4_N.T_Metall_4_N'
+}
+Expressions[145] =
+{
+    Expressions[1] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_11'
+    Expressions[4] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_14'
+    Expressions[5] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_2'
+    Expressions[6] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_1'
+    Expressions[7] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_9'
+    Expressions[8] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_0'
+    Expressions[9] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_8'
+    Expressions[10] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_7'
+    Expressions[11] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_10'
+    Expressions[12] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_5'
+    Expressions[15] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSampleParameter2D_1'
+    Expressions[16] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_4'
+    Expressions[17] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSampleParameter2D_2'
+    Expressions[18] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSampleParameter2D_3'
+    Expressions[20] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_1'
+    Expressions[21] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_4'
+    Expressions[22] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_5'
+    Expressions[24] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_2'
+    Expressions[26] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_7'
+    Expressions[30] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSampleParameter2D_5'
+    Expressions[32] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_11'
+    Expressions[33] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_12'
+    Expressions[35] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSampleParameter2D_6'
+    Expressions[36] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_3'
+    Expressions[38] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_3'
+    Expressions[39] = MaterialExpressionVectorParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionVectorParameter_0'
+    Expressions[42] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_0'
+    Expressions[47] = MaterialExpressionVectorParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionVectorParameter_5'
+    Expressions[49] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_8'
+    Expressions[50] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_16'
+    Expressions[52] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_6'
+    Expressions[55] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_9'
+    Expressions[56] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_10'
+    Expressions[59] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSampleParameter2D_8'
+    Expressions[62] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_6'
+    Expressions[73] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_14'
+    Expressions[74] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_15'
+    Expressions[78] = MaterialExpressionVectorParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionVectorParameter_2'
+    Expressions[81] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_13'
+    Expressions[82] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSampleParameter2D_7'
+    Expressions[87] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_17'
+    Expressions[88] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_18'
+    Expressions[92] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_12'
+    Expressions[93] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionStaticSwitchParameter_13'
+    Expressions[94] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSampleParameter2D_9'
+    Expressions[95] = MaterialExpressionVectorParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionVectorParameter_1'
+    Expressions[97] = MaterialExpressionVectorParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionVectorParameter_3'
+    Expressions[99] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_19'
+    Expressions[102] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_20'
+    Expressions[103] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSampleParameter2D_10'
+    Expressions[106] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_21'
+    Expressions[117] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_22'
+    Expressions[118] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_23'
+    Expressions[122] = MaterialExpressionVectorParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionVectorParameter_4'
+    Expressions[125] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_24'
+    Expressions[126] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSampleParameter2D_11'
+    Expressions[129] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSampleParameter2D_12'
+    Expressions[130] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_25'
+    Expressions[134] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_26'
+    Expressions[137] = MaterialExpressionTextureSample'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionTextureSample_0'
+    Expressions[140] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionScalarParameter_27'
+    Expressions[144] = MaterialExpressionVectorParameter'Environment/StationAndShips/Materials/M_Tiling_VertexColor.MaterialExpressionVectorParameter_6'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}
+}
+BlendMode = BLEND_Opaque (0)
+OpacityMaskClipValue = 0.333
+CollectedTextureParameters[11] =
+{
+    CollectedTextureParameters[0] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_N.T_Dev_N'
+        Name = NormalMap
+        Group = None
+    }
+    CollectedTextureParameters[1] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_Grey_D.T_Dev_Grey_D'
+        Name = DiffMap
+        Group = None
+    }
+    CollectedTextureParameters[2] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_Grey_D.T_Dev_Grey_D'
+        Name = MaskMap
+        Group = None
+    }
+    CollectedTextureParameters[3] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_N.T_Dev_N'
+        Name = DetailNormalMap
+        Group = None
+    }
+    CollectedTextureParameters[4] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_Grey_D.T_Dev_Grey_D'
+        Name = HeightMap
+        Group = None
+    }
+    CollectedTextureParameters[5] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Tiling/Dirt/T_Mask_Dirt_01.T_Mask_Dirt_01'
+        Name = Leaks_Mask
+        Group = None
+    }
+    CollectedTextureParameters[6] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Tiling/Dirt/T_Mask_Dirt_01.T_Mask_Dirt_01'
+        Name = Leaks_Mask
+        Group = None
+    }
+    CollectedTextureParameters[7] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_Grey_D.T_Dev_Grey_D'
+        Name = DiffMap_1
+        Group = None
+    }
+    CollectedTextureParameters[8] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Tiling/Dirt/T_Mask_Dirt_01.T_Mask_Dirt_01'
+        Name = Leaks_Mask_1
+        Group = None
+    }
+    CollectedTextureParameters[9] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Tiling/Dirt/T_Mask_Dirt_01.T_Mask_Dirt_01'
+        Name = Leaks_Mask_1
+        Group = None
+    }
+    CollectedTextureParameters[10] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Tiling/Dirt/T_Mask_Dirt_01.T_Mask_Dirt_01'
+        Name = MaskMap_1
+        Group = VertexColor
+    }
+}
+CollectedScalarParameters[28] =
+{
+    CollectedScalarParameters[0] = { Value=1, Name=OcclusionValue, Group=None }
+    CollectedScalarParameters[1] = { Value=0, Name=MetallicValue, Group=None }
+    CollectedScalarParameters[2] = { Value=0.4, Name=RoughnessValue, Group=None }
+    CollectedScalarParameters[3] = { Value=1, Name=OcclusionMultiply, Group=None }
+    CollectedScalarParameters[4] = { Value=1, Name=EmissiveScale, Group=None }
+    CollectedScalarParameters[5] = { Value=1, Name=DetailTiling, Group=None }
+    CollectedScalarParameters[6] = { Value=1, Name=DetailNormalStrength, Group=None }
+    CollectedScalarParameters[7] = { Value=0.02, Name=ParallaxDepth, Group=None }
+    CollectedScalarParameters[8] =
+    {
+        Value = 1
+        Name = DetailRoughnessStrength
+        Group = None
+    }
+    CollectedScalarParameters[9] = { Value=1, Name=DiffuseMultiply, Group=None }
+    CollectedScalarParameters[10] = { Value=1, Name=RoughnessMultiply, Group=None }
+    CollectedScalarParameters[11] = { Value=1, Name=SizeDiff, Group=None }
+    CollectedScalarParameters[12] = { Value=1, Name=Sizemask, Group=None }
+    CollectedScalarParameters[13] = { Value=1, Name=Leaks_opacity, Group=None }
+    CollectedScalarParameters[14] = { Value=0.56, Name=Wear_angle, Group=None }
+    CollectedScalarParameters[15] = { Value=0.546697, Name=Wear_Treshold, Group=None }
+    CollectedScalarParameters[16] = { Value=1.8, Name=wear_tile, Group=None }
+    CollectedScalarParameters[17] = { Value=0.3, Name=WearRoughness, Group=None }
+    CollectedScalarParameters[18] = { Value=1, Name=WearMetallic, Group=None }
+    CollectedScalarParameters[19] =
+    {
+        Value = 1
+        Name = DiffuseMultiply_1
+        Group = VertexColor
+    }
+    CollectedScalarParameters[20] = { Value=1, Name=SizeDiff_1, Group=VertexColor }
+    CollectedScalarParameters[21] = { Value=1, Name=Leaks_opacity_1, Group=VertexColor }
+    CollectedScalarParameters[22] = { Value=0.56, Name=Wear_angle_1, Group=VertexColor }
+    CollectedScalarParameters[23] =
+    {
+        Value = 0.546697
+        Name = Wear_Treshold_1
+        Group = VertexColor
+    }
+    CollectedScalarParameters[24] = { Value=1.8, Name=wear_tile_1, Group=VertexColor }
+    CollectedScalarParameters[25] = { Value=1, Name=Sizemask_1, Group=VertexColor }
+    CollectedScalarParameters[26] = { Value=1, Name=Burned_Rough, Group=None }
+    CollectedScalarParameters[27] = { Value=1, Name=Normal_Overlay_Size, Group=None }
+}
+CollectedVectorParameters[7] =
+{
+    CollectedVectorParameters[0] =
+    {
+        Value = { R=0.5, G=0.5, B=0.5, A=1 }
+        Name = DiffuseValue
+        Group = None
+    }
+    CollectedVectorParameters[1] =
+    {
+        Value = { R=1, G=1, B=1, A=1 }
+        Name = DiffTint
+        Group = None
+    }
+    CollectedVectorParameters[2] =
+    {
+        Value = { R=0.39, G=0.39, B=0.39, A=1 }
+        Name = Edge_wear_color
+        Group = None
+    }
+    CollectedVectorParameters[3] =
+    {
+        Value = { R=0.5, G=0.5, B=0.5, A=1 }
+        Name = DiffuseValue_1
+        Group = VertexColor
+    }
+    CollectedVectorParameters[4] =
+    {
+        Value = { R=1, G=1, B=1, A=1 }
+        Name = DiffTint_1
+        Group = VertexColor
+    }
+    CollectedVectorParameters[5] =
+    {
+        Value = { R=0.39, G=0.39, B=0.39, A=1 }
+        Name = Edge_wear_color_1
+        Group = VertexColor
+    }
+    CollectedVectorParameters[6] =
+    {
+        Value = { R=1, G=1, B=1, A=1 }
+        Name = Normal_Overlay_Int
+        Group = None
+    }
+}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}

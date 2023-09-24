@@ -1,0 +1,286 @@
+Parent = Material3'Environment/StationAndShips/Materials/M_Tiling_VertexColor.M_Tiling_VertexColor'
+ScalarParameterValues[19] =
+{
+    ScalarParameterValues[0] =
+    {
+        ParameterInfo = { Name=DiffuseMultiply_1 }
+        ParameterValue = 2.05346
+        ParameterName = None
+    }
+    ScalarParameterValues[1] =
+    {
+        ParameterInfo = { Name=Leaks_opacity_1 }
+        ParameterValue = -2.4404
+        ParameterName = None
+    }
+    ScalarParameterValues[2] =
+    {
+        ParameterInfo = { Name=SizeDiff_1 }
+        ParameterValue = 0.752214
+        ParameterName = None
+    }
+    ScalarParameterValues[3] =
+    {
+        ParameterInfo = { Name=Sizemask_1 }
+        ParameterValue = 0.37894
+        ParameterName = None
+    }
+    ScalarParameterValues[4] =
+    {
+        ParameterInfo = { Name=Wear_angle_1 }
+        ParameterValue = 0.31216
+        ParameterName = None
+    }
+    ScalarParameterValues[5] =
+    {
+        ParameterInfo = { Name=wear_tile_1 }
+        ParameterValue = 0.778782
+        ParameterName = None
+    }
+    ScalarParameterValues[6] =
+    {
+        ParameterInfo = { Name=Wear_Treshold_1 }
+        ParameterValue = -0.396488
+        ParameterName = None
+    }
+    ScalarParameterValues[7] =
+    {
+        ParameterInfo = { Name=DetailNormalStrength }
+        ParameterValue = 0.5
+        ParameterName = None
+    }
+    ScalarParameterValues[8] =
+    {
+        ParameterInfo = { Name=DetailTiling }
+        ParameterValue = 0.808116
+        ParameterName = None
+    }
+    ScalarParameterValues[9] =
+    {
+        ParameterInfo = { Name=DiffuseMultiply }
+        ParameterValue = 0.328384
+        ParameterName = None
+    }
+    ScalarParameterValues[10] =
+    {
+        ParameterInfo = { Name=RoughnessMultiply }
+        ParameterValue = 0.932383
+        ParameterName = None
+    }
+    ScalarParameterValues[11] =
+    {
+        ParameterInfo = { Name=SizeDiff }
+        ParameterValue = 1
+        ParameterName = None
+    }
+    ScalarParameterValues[12] =
+    {
+        ParameterInfo = { Name=Sizemask }
+        ParameterValue = 0.6
+        ParameterName = None
+    }
+    ScalarParameterValues[13] =
+    {
+        ParameterInfo = { Name=Wear_angle }
+        ParameterValue = 0.545969
+        ParameterName = None
+    }
+    ScalarParameterValues[14] =
+    {
+        ParameterInfo = { Name=wear_tile }
+        ParameterValue = 0.6581
+        ParameterName = None
+    }
+    ScalarParameterValues[15] =
+    {
+        ParameterInfo = { Name=Wear_Treshold }
+        ParameterValue = 0.603434
+        ParameterName = None
+    }
+    ScalarParameterValues[16] =
+    {
+        ParameterInfo = { Name=WearMetallic }
+        ParameterValue = 1
+        ParameterName = None
+    }
+    ScalarParameterValues[17] =
+    {
+        ParameterInfo = { Name=WearRoughness }
+        ParameterValue = 0.633233
+        ParameterName = None
+    }
+    ScalarParameterValues[18] =
+    {
+        ParameterInfo = { Name=RefractionDepthBias }
+        ParameterValue = 0
+        ParameterName = None
+    }
+}
+TextureParameterValues[8] =
+{
+    TextureParameterValues[0] =
+    {
+        ParameterInfo = { Name=MaskMap_1 }
+        ParameterValue = Texture2D'Environment/StationAndShips/Textures/Tiling/Dirt/T_Mask_Dirt_01.T_Mask_Dirt_01'
+        ParameterName = None
+    }
+    TextureParameterValues[1] =
+    {
+        ParameterInfo = { Name=DetailNormalMap }
+        ParameterValue = Texture2D'Environment/StationAndShips/Textures/Tiling/Metal/T_Metall_4_N.T_Metall_4_N'
+        ParameterName = None
+    }
+    TextureParameterValues[2] =
+    {
+        ParameterInfo = { Name=DiffMap }
+        ParameterValue = Texture2D'Environment/StationAndShips/Textures/Tiling/Metal/T_Metall_Gray01_D.T_Metall_Gray01_D'
+        ParameterName = None
+    }
+    TextureParameterValues[3] =
+    {
+        ParameterInfo = { Name=DiffMap_1 }
+        ParameterValue = Texture2D'Environment/StationAndShips/Textures/Tiling/Dirt/T_dirt_a_d.T_dirt_a_d'
+        ParameterName = None
+    }
+    TextureParameterValues[4] =
+    {
+        ParameterInfo = { Name=Leaks_Mask }
+        ParameterValue = Texture2D'Environment/StationAndShips/Textures/Tiling/Metal/T_TexturesCom_RustedPlates_1024_diffuse.T_TexturesCom_RustedPlates_1024_diffuse'
+        ParameterName = None
+    }
+    TextureParameterValues[5] =
+    {
+        ParameterInfo = { Name=Leaks_Mask_1 }
+        ParameterValue = Texture2D'Effects/Textures/T_PlasmaNoise_A_02.T_PlasmaNoise_A_02'
+        ParameterName = None
+    }
+    TextureParameterValues[6] =
+    {
+        ParameterInfo = { Name=MaskMap }
+        ParameterValue = Texture2D'Environment/StationAndShips/Textures/Tiling/Metal/T_Metall_Gray02_M.T_Metall_Gray02_M'
+        ParameterName = None
+    }
+    TextureParameterValues[7] =
+    {
+        ParameterInfo = { Name=NormalMap }
+        ParameterValue = Texture2D'Environment/StationAndShips/Textures/Tiling/Metal/T_MetalPanel_6_N.T_MetalPanel_6_N'
+        ParameterName = None
+    }
+}
+VectorParameterValues[5] =
+{
+    VectorParameterValues[0] =
+    {
+        ParameterInfo = { Name=DiffTint }
+        ParameterValue = { R=5, G=5, B=5, A=1 }
+        ParameterName = None
+    }
+    VectorParameterValues[1] =
+    {
+        ParameterInfo = { Name=Edge_wear_color }
+        ParameterValue = { R=0, G=0, B=0, A=1 }
+        ParameterName = None
+    }
+    VectorParameterValues[2] =
+    {
+        ParameterInfo = { Name=DiffTint_1 }
+        ParameterValue = { R=1, G=1, B=1, A=1 }
+        ParameterName = None
+    }
+    VectorParameterValues[3] =
+    {
+        ParameterInfo = { Name=DiffuseValue_1 }
+        ParameterValue = { R=0.5, G=0.5, B=0.5, A=1 }
+        ParameterName = None
+    }
+    VectorParameterValues[4] =
+    {
+        ParameterInfo = { Name=Edge_wear_color_1 }
+        ParameterValue = { R=0.040785, G=0.043702, B=0.057292, A=1 }
+        ParameterName = None
+    }
+}
+BasePropertyOverrides =
+{
+    bOverride_BlendMode = false
+    BlendMode = BLEND_Opaque (0)
+    bOverride_TwoSided = false
+    TwoSided = false
+    bOverride_OpacityMaskClipValue = false
+    OpacityMaskClipValue = 0.3333
+}
+StaticParameters =
+{
+    StaticSwitchParameters[7] =
+    {
+        StaticSwitchParameters[0] =
+        {
+            Value = true
+            ParameterInfo = { Name=UseDetailNormal? }
+            bOverride = true
+        }
+        StaticSwitchParameters[1] =
+        {
+            Value = true
+            ParameterInfo = { Name=UseDiffuseMap? }
+            bOverride = true
+        }
+        StaticSwitchParameters[2] =
+        {
+            Value = true
+            ParameterInfo = { Name=UseMetallicMap? }
+            bOverride = true
+        }
+        StaticSwitchParameters[3] =
+        {
+            Value = true
+            ParameterInfo = { Name=UseOcclusionMap? }
+            bOverride = true
+        }
+        StaticSwitchParameters[4] =
+        {
+            Value = true
+            ParameterInfo = { Name=UseRoughnessMap? }
+            bOverride = true
+        }
+        StaticSwitchParameters[5] =
+        {
+            Value = true
+            ParameterInfo = { Name=Edge_Wear_1 }
+            bOverride = true
+        }
+        StaticSwitchParameters[6] =
+        {
+            Value = true
+            ParameterInfo = { Name=UseDiffuseMap?_1 }
+            bOverride = true
+        }
+    }
+    StaticComponentMaskParameters[0] = {}
+    TerrainLayerWeightParameters[0] = {}
+    MaterialLayersParameters[0] = {}
+}
+RuntimeVirtualTextureParameterValues[0] = {}
+FontParameterValues[0] = {}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[2] =
+{
+    TextureStreamingData[0] =
+    {
+        SamplingScale = 0.8125
+        UVChannelIndex = 0
+        TextureName = T_Metall_4_N
+    }
+    TextureStreamingData[1] =
+    {
+        SamplingScale = 0.59375
+        UVChannelIndex = 0
+        TextureName = T_Metall_Gray02_M
+    }
+}

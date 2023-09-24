@@ -1,0 +1,10 @@
+Diffuse=T_StationWall_D
+Normal=T_MetallScratches_N
+Other[0]=T_Fabric_BetaCloth_D
+Other[1]=T_Fabric_BetaCloth_N
+Other[2]=T_plastic01_N
+Other[3]=T_Metall_4_N
+Other[4]=T_StationWall_RMEE
+Other[5]=T_Mask_Dirt_01
+Other[6]=T_Wood01_D
+Other[7]=T_StationWall_Mask

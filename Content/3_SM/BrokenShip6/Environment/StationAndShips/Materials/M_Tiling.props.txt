@@ -1,0 +1,153 @@
+TwoSided = false
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[4] =
+{
+    ReferencedTextures[0] = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_black_D.T_Dev_black_D'
+    ReferencedTextures[1] = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_Grey_D.T_Dev_Grey_D'
+    ReferencedTextures[2] = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_N.T_Dev_N'
+    ReferencedTextures[3] = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_wight_D.T_Dev_wight_D'
+}
+Expressions[52] =
+{
+    Expressions[0] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionStaticSwitchParameter_7'
+    Expressions[1] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionStaticSwitchParameter_10'
+    Expressions[2] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionStaticSwitchParameter_5'
+    Expressions[3] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionStaticSwitchParameter_0'
+    Expressions[4] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionStaticSwitchParameter_2'
+    Expressions[5] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionStaticSwitchParameter_1'
+    Expressions[8] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionTextureSampleParameter2D_1'
+    Expressions[9] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionStaticSwitchParameter_4'
+    Expressions[10] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionTextureSampleParameter2D_2'
+    Expressions[11] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionTextureSampleParameter2D_3'
+    Expressions[13] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_1'
+    Expressions[14] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_4'
+    Expressions[15] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_5'
+    Expressions[17] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_2'
+    Expressions[18] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionTextureSampleParameter2D_4'
+    Expressions[19] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_7'
+    Expressions[23] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionTextureSampleParameter2D_5'
+    Expressions[25] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_11'
+    Expressions[26] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_12'
+    Expressions[28] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionTextureSampleParameter2D_6'
+    Expressions[29] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionStaticSwitchParameter_3'
+    Expressions[31] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_3'
+    Expressions[32] = MaterialExpressionVectorParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionVectorParameter_0'
+    Expressions[33] = MaterialExpressionTextureSampleParameter2D'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionTextureSampleParameter2D_0'
+    Expressions[35] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_0'
+    Expressions[40] = MaterialExpressionVectorParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionVectorParameter_5'
+    Expressions[42] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_8'
+    Expressions[43] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_16'
+    Expressions[45] = MaterialExpressionStaticSwitchParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionStaticSwitchParameter_6'
+    Expressions[48] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_9'
+    Expressions[49] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/M_Tiling.MaterialExpressionScalarParameter_10'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}
+}
+BlendMode = BLEND_Opaque (0)
+OpacityMaskClipValue = 0.333
+CollectedTextureParameters[7] =
+{
+    CollectedTextureParameters[0] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_N.T_Dev_N'
+        Name = NormalMap
+        Group = None
+    }
+    CollectedTextureParameters[1] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_Grey_D.T_Dev_Grey_D'
+        Name = DiffMap
+        Group = None
+    }
+    CollectedTextureParameters[2] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_Grey_D.T_Dev_Grey_D'
+        Name = MaskMap
+        Group = None
+    }
+    CollectedTextureParameters[3] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_black_D.T_Dev_black_D'
+        Name = EmissiveMap
+        Group = None
+    }
+    CollectedTextureParameters[4] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_N.T_Dev_N'
+        Name = DetailNormalMap
+        Group = None
+    }
+    CollectedTextureParameters[5] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_Grey_D.T_Dev_Grey_D'
+        Name = HeightMap
+        Group = None
+    }
+    CollectedTextureParameters[6] =
+    {
+        Texture = Texture2D'Environment/StationAndShips/Textures/Dev/T_Dev_wight_D.T_Dev_wight_D'
+        Name = DetailRoughnessMap
+        Group = None
+    }
+}
+CollectedScalarParameters[13] =
+{
+    CollectedScalarParameters[0] = { Value=1, Name=OcclusionValue, Group=None }
+    CollectedScalarParameters[1] = { Value=0, Name=MetallicValue, Group=None }
+    CollectedScalarParameters[2] = { Value=0.4, Name=RoughnessValue, Group=None }
+    CollectedScalarParameters[3] = { Value=1, Name=OcclusionMultiply, Group=None }
+    CollectedScalarParameters[4] = { Value=1, Name=EmissiveScale, Group=None }
+    CollectedScalarParameters[5] = { Value=1, Name=DetailTiling, Group=None }
+    CollectedScalarParameters[6] = { Value=1, Name=DetailNormalStrength, Group=None }
+    CollectedScalarParameters[7] = { Value=0.02, Name=ParallaxDepth, Group=None }
+    CollectedScalarParameters[8] =
+    {
+        Value = 1
+        Name = DetailRoughnessStrength
+        Group = None
+    }
+    CollectedScalarParameters[9] = { Value=1, Name=DiffuseMultiply, Group=None }
+    CollectedScalarParameters[10] = { Value=1, Name=RoughnessMultiply, Group=None }
+    CollectedScalarParameters[11] = { Value=1, Name=SizeDiff, Group=None }
+    CollectedScalarParameters[12] = { Value=1, Name=Sizemask, Group=None }
+}
+CollectedVectorParameters[2] =
+{
+    CollectedVectorParameters[0] =
+    {
+        Value = { R=0.5, G=0.5, B=0.5, A=1 }
+        Name = DiffuseValue
+        Group = None
+    }
+    CollectedVectorParameters[1] =
+    {
+        Value = { R=1, G=1, B=1, A=1 }
+        Name = DiffTint
+        Group = None
+    }
+}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}
