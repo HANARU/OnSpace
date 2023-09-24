@@ -1,0 +1,71 @@
+TwoSided = false
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[2] =
+{
+    ReferencedTextures[0] = Texture2D'Environment/StationAndShips/Textures/Lighting/T_Monitor_Screen_M.T_Monitor_Screen_M'
+    ReferencedTextures[1] = Texture2D'Environment/StationAndShips/Textures/Lighting/T_Grime_Lines_M.T_Grime_Lines_M'
+}
+Expressions[61] =
+{
+    Expressions[1] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/Lighting/M_MonitorWithGlitch.MaterialExpressionScalarParameter_3'
+    Expressions[2] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/Lighting/M_MonitorWithGlitch.MaterialExpressionScalarParameter_6'
+    Expressions[8] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/Lighting/M_MonitorWithGlitch.MaterialExpressionScalarParameter_28'
+    Expressions[9] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/Lighting/M_MonitorWithGlitch.MaterialExpressionScalarParameter_29'
+    Expressions[10] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/Lighting/M_MonitorWithGlitch.MaterialExpressionScalarParameter_30'
+    Expressions[12] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/Lighting/M_MonitorWithGlitch.MaterialExpressionScalarParameter_31'
+    Expressions[13] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/Lighting/M_MonitorWithGlitch.MaterialExpressionScalarParameter_32'
+    Expressions[15] = MaterialExpressionTextureSample'Environment/StationAndShips/Materials/Lighting/M_MonitorWithGlitch.MaterialExpressionTextureSample_0'
+    Expressions[18] = MaterialExpressionTextureSample'Environment/StationAndShips/Materials/Lighting/M_MonitorWithGlitch.MaterialExpressionTextureSample_1'
+    Expressions[29] = MaterialExpressionScalarParameter'Environment/StationAndShips/Materials/Lighting/M_MonitorWithGlitch.MaterialExpressionScalarParameter_1'
+    Expressions[56] = MaterialExpressionVectorParameter'Environment/StationAndShips/Materials/Lighting/M_MonitorWithGlitch.MaterialExpressionVectorParameter_2'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}
+}
+BlendMode = BLEND_Opaque (0)
+OpacityMaskClipValue = 0.333
+CollectedTextureParameters[0] = {}
+CollectedScalarParameters[8] =
+{
+    CollectedScalarParameters[0] = { Value=1, Name=MetallicValue, Group=None }
+    CollectedScalarParameters[1] = { Value=0.2, Name=RoughnessValue, Group=None }
+    CollectedScalarParameters[2] = { Value=1, Name=AnimationPhase, Group=None }
+    CollectedScalarParameters[3] = { Value=1, Name=Rows, Group=None }
+    CollectedScalarParameters[4] = { Value=2, Name=Columns, Group=None }
+    CollectedScalarParameters[5] = { Value=0.01, Name=EmisiveAdd, Group=None }
+    CollectedScalarParameters[6] = { Value=3, Name=EmmisiveMult, Group=None }
+    CollectedScalarParameters[7] = { Value=1.5, Name=Noise speed, Group=None }
+}
+CollectedVectorParameters[1] =
+{
+    CollectedVectorParameters[0] =
+    {
+        Value = { R=0.1, G=0.164582, B=0.2, A=0 }
+        Name = Base color
+        Group = None
+    }
+}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}
