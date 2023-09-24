@@ -47,16 +47,61 @@ bool AItemBase::Active()
 void AItemBase::ExecuteGrab(UMotionControllerComponent* MotionControllerToGrab)
 {
 	MotionController = MotionControllerToGrab;
-	if (bHasGravity)
+	Player = Cast<AVRPlayer>(MotionController->GetOwner());
+	
+	if(this->objectName==TEXT("Blaster")) bIsBlaster = true;
+	
+	if (bIsBlaster)
 	{
-		ItemBody->SetSimulatePhysics(false);
-		AttachToComponent(MotionControllerToGrab, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		if (Player->motionControllerLeft)
+		{
+			if (bHasGravity)
+			{
+				ItemBody->SetSimulatePhysics(false);
+				AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
+					"Left_BlasterLoc"));
+				GEngine->AddOnScreenDebugMessage(-1,2.f,FColor::Yellow,TEXT("Left Grab!"));
+			}
+			else
+			{
+				AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
+					"Left_BlasterLoc"));
+				ItemBody->SetSimulatePhysics(bHasGravity);
+				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Left Grab!"));
+			}
+		}
+		else if(Player->motionControllerRight)
+		{
+			if (bHasGravity)
+			{
+				ItemBody->SetSimulatePhysics(false);
+				AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
+					"Right_BlasterLoc"));
+				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Right Grab!"));
+			}
+			else
+			{
+				AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
+					"Right_BlasterLoc"));
+				ItemBody->SetSimulatePhysics(bHasGravity);
+				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Right Grab!"));
+			}
+		}
 	}
 	else
 	{
-		AttachToComponent(MotionControllerToGrab, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-		ItemBody->SetSimulatePhysics(bHasGravity);
+		if (bHasGravity)
+		{
+			ItemBody->SetSimulatePhysics(false);
+			AttachToComponent(MotionControllerToGrab, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		}
+		else
+		{
+			AttachToComponent(MotionControllerToGrab, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+			ItemBody->SetSimulatePhysics(bHasGravity);
+		}
 	}
+	
 }
 
 void AItemBase::ExecuteRelease(UMotionControllerComponent* MotionControllerToRelease)

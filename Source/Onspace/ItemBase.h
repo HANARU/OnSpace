@@ -38,11 +38,18 @@ public:
 
 	bool bHasGravity = false;
 
+	//Gun Mode Val
+	bool bIsBlaster = false;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
 	FName objectName;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
 	bool CanEatThis;
+
+	//GunMode Val
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
+	class AVRPlayer* Player;
 
 	FItemData* CurrentItemData;
 	UDataTable* CurrentItemTable;
