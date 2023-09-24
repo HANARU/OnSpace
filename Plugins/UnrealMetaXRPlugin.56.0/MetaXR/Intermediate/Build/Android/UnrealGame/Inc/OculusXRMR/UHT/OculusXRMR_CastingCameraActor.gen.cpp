@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "D:/OculusXR-release/HostProject/Plugins/OculusXR/Source/OculusXRMR/Private/OculusXRMR_CastingCameraActor.h"
+#include "D:/OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRMR/Private/OculusXRMR_CastingCameraActor.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeOculusXRMR_CastingCameraActor() {}
 // Cross Module References
@@ -223,15 +223,15 @@ void EmptyLinkFunctionForGeneratedCodeOculusXRMR_CastingCameraActor() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AOculusXRMR_CastingCameraActor);
 	AOculusXRMR_CastingCameraActor::~AOculusXRMR_CastingCameraActor() {}
-	struct Z_CompiledInDeferFile_FID_HostProject_Plugins_OculusXR_Source_OculusXRMR_Private_OculusXRMR_CastingCameraActor_h_Statics
+	struct Z_CompiledInDeferFile_FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRMR_Private_OculusXRMR_CastingCameraActor_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_OculusXR_Source_OculusXRMR_Private_OculusXRMR_CastingCameraActor_h_Statics::ClassInfo[] = {
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRMR_Private_OculusXRMR_CastingCameraActor_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_AOculusXRMR_CastingCameraActor, AOculusXRMR_CastingCameraActor::StaticClass, TEXT("AOculusXRMR_CastingCameraActor"), &Z_Registration_Info_UClass_AOculusXRMR_CastingCameraActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AOculusXRMR_CastingCameraActor), 156031493U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_OculusXR_Source_OculusXRMR_Private_OculusXRMR_CastingCameraActor_h_1942832959(TEXT("/Script/OculusXRMR"),
-		Z_CompiledInDeferFile_FID_HostProject_Plugins_OculusXR_Source_OculusXRMR_Private_OculusXRMR_CastingCameraActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_OculusXR_Source_OculusXRMR_Private_OculusXRMR_CastingCameraActor_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRMR_Private_OculusXRMR_CastingCameraActor_h_1942832959(TEXT("/Script/OculusXRMR"),
+		Z_CompiledInDeferFile_FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRMR_Private_OculusXRMR_CastingCameraActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRMR_Private_OculusXRMR_CastingCameraActor_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

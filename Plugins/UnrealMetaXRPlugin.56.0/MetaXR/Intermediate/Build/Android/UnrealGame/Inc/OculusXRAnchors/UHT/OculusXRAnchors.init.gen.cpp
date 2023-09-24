@@ -53,7 +53,7 @@ void EmptyLinkFunctionForGeneratedCodeOculusXRAnchors_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x6C6200C5,
+				0xB6813464,
 				0x2E6D09DE,
 				METADATA_PARAMS(nullptr, 0)
 			};
@@ -61,5 +61,5 @@ void EmptyLinkFunctionForGeneratedCodeOculusXRAnchors_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_OculusXRAnchors.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_OculusXRAnchors(Z_Construct_UPackage__Script_OculusXRAnchors, TEXT("/Script/OculusXRAnchors"), Z_Registration_Info_UPackage__Script_OculusXRAnchors, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x6C6200C5, 0x2E6D09DE));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_OculusXRAnchors(Z_Construct_UPackage__Script_OculusXRAnchors, TEXT("/Script/OculusXRAnchors"), Z_Registration_Info_UPackage__Script_OculusXRAnchors, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xB6813464, 0x2E6D09DE));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

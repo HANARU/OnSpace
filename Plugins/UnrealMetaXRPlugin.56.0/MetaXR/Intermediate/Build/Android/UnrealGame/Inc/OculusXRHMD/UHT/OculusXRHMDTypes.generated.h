@@ -14,28 +14,28 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define OCULUSXRHMD_OculusXRHMDTypes_generated_h
 
-#define FID_HostProject_Plugins_OculusXR_Source_OculusXRHMD_Public_OculusXRHMDTypes_h_29_GENERATED_BODY \
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRHMD_Public_OculusXRHMDTypes_h_29_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FOculusXRHmdUserProfileField_Statics; \
 	OCULUSXRHMD_API static class UScriptStruct* StaticStruct();
 
 
 template<> OCULUSXRHMD_API UScriptStruct* StaticStruct<struct FOculusXRHmdUserProfileField>();
 
-#define FID_HostProject_Plugins_OculusXR_Source_OculusXRHMD_Public_OculusXRHMDTypes_h_45_GENERATED_BODY \
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRHMD_Public_OculusXRHMDTypes_h_45_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FOculusXRHmdUserProfile_Statics; \
 	OCULUSXRHMD_API static class UScriptStruct* StaticStruct();
 
 
 template<> OCULUSXRHMD_API UScriptStruct* StaticStruct<struct FOculusXRHmdUserProfile>();
 
-#define FID_HostProject_Plugins_OculusXR_Source_OculusXRHMD_Public_OculusXRHMDTypes_h_212_GENERATED_BODY \
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRHMD_Public_OculusXRHMDTypes_h_212_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FOculusXRGuardianTestResult_Statics; \
 	OCULUSXRHMD_API static class UScriptStruct* StaticStruct();
 
 
 template<> OCULUSXRHMD_API UScriptStruct* StaticStruct<struct FOculusXRGuardianTestResult>();
 
-#define FID_HostProject_Plugins_OculusXR_Source_OculusXRHMD_Public_OculusXRHMDTypes_h_248_GENERATED_BODY \
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRHMD_Public_OculusXRHMDTypes_h_248_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FOculusXRSplashDesc_Statics; \
 	OCULUSXRHMD_API static class UScriptStruct* StaticStruct();
 
@@ -43,7 +43,7 @@ template<> OCULUSXRHMD_API UScriptStruct* StaticStruct<struct FOculusXRGuardianT
 template<> OCULUSXRHMD_API UScriptStruct* StaticStruct<struct FOculusXRSplashDesc>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_HostProject_Plugins_OculusXR_Source_OculusXRHMD_Public_OculusXRHMDTypes_h
+#define CURRENT_FILE_ID FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRHMD_Public_OculusXRHMDTypes_h
 
 
 #define FOREACH_ENUM_EOCULUSXRTRACKEDDEVICETYPE(op) \

@@ -14,35 +14,35 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define OCULUSXRMOVEMENT_OculusXRMovementTypes_generated_h
 
-#define FID_HostProject_Plugins_OculusXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h_94_GENERATED_BODY \
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h_94_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FOculusXRBodyJoint_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> OCULUSXRMOVEMENT_API UScriptStruct* StaticStruct<struct FOculusXRBodyJoint>();
 
-#define FID_HostProject_Plugins_OculusXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h_113_GENERATED_BODY \
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h_113_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FOculusXRBodyState_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> OCULUSXRMOVEMENT_API UScriptStruct* StaticStruct<struct FOculusXRBodyState>();
 
-#define FID_HostProject_Plugins_OculusXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h_214_GENERATED_BODY \
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h_214_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FOculusXRFaceState_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> OCULUSXRMOVEMENT_API UScriptStruct* StaticStruct<struct FOculusXRFaceState>();
 
-#define FID_HostProject_Plugins_OculusXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h_245_GENERATED_BODY \
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h_245_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FOculusXREyeGazeState_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> OCULUSXRMOVEMENT_API UScriptStruct* StaticStruct<struct FOculusXREyeGazeState>();
 
-#define FID_HostProject_Plugins_OculusXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h_265_GENERATED_BODY \
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h_265_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FOculusXREyeGazesState_Statics; \
 	static class UScriptStruct* StaticStruct();
 
@@ -50,7 +50,7 @@ template<> OCULUSXRMOVEMENT_API UScriptStruct* StaticStruct<struct FOculusXREyeG
 template<> OCULUSXRMOVEMENT_API UScriptStruct* StaticStruct<struct FOculusXREyeGazesState>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_HostProject_Plugins_OculusXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h
+#define CURRENT_FILE_ID FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRMovement_Public_OculusXRMovementTypes_h
 
 
 #define FOREACH_ENUM_EOCULUSXRBONEID(op) \

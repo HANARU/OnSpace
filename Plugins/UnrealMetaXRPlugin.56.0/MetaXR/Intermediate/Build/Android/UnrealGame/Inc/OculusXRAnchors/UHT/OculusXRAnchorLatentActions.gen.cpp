@@ -5,8 +5,8 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "D:/OculusXR-release/HostProject/Plugins/OculusXR/Source/OculusXRAnchors/Public/OculusXRAnchorLatentActions.h"
-#include "D:/OculusXR-release/HostProject/Plugins/OculusXR/Source/OculusXRAnchors/Public/OculusXRAnchorTypes.h"
+#include "D:/OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRAnchors/Public/OculusXRAnchorLatentActions.h"
+#include "D:/OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRAnchors/Public/OculusXRAnchorTypes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeOculusXRAnchorLatentActions() {}
 // Cross Module References
@@ -2271,11 +2271,11 @@ void FOculusXR_LatentAction_ShareAnchors_Failure_DelegateWrapper(const FMulticas
 	UOculusXRAsyncAction_ShareAnchors::UOculusXRAsyncAction_ShareAnchors(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UOculusXRAsyncAction_ShareAnchors);
 	UOculusXRAsyncAction_ShareAnchors::~UOculusXRAsyncAction_ShareAnchors() {}
-	struct Z_CompiledInDeferFile_FID_HostProject_Plugins_OculusXR_Source_OculusXRAnchors_Public_OculusXRAnchorLatentActions_h_Statics
+	struct Z_CompiledInDeferFile_FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorLatentActions_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_OculusXR_Source_OculusXRAnchors_Public_OculusXRAnchorLatentActions_h_Statics::ClassInfo[] = {
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorLatentActions_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_UOculusXRAsyncAction_CreateSpatialAnchor, UOculusXRAsyncAction_CreateSpatialAnchor::StaticClass, TEXT("UOculusXRAsyncAction_CreateSpatialAnchor"), &Z_Registration_Info_UClass_UOculusXRAsyncAction_CreateSpatialAnchor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UOculusXRAsyncAction_CreateSpatialAnchor), 3481266547U) },
 		{ Z_Construct_UClass_UOculusXRAsyncAction_EraseAnchor, UOculusXRAsyncAction_EraseAnchor::StaticClass, TEXT("UOculusXRAsyncAction_EraseAnchor"), &Z_Registration_Info_UClass_UOculusXRAsyncAction_EraseAnchor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UOculusXRAsyncAction_EraseAnchor), 299610327U) },
 		{ Z_Construct_UClass_UOculusXRAsyncAction_SaveAnchor, UOculusXRAsyncAction_SaveAnchor::StaticClass, TEXT("UOculusXRAsyncAction_SaveAnchor"), &Z_Registration_Info_UClass_UOculusXRAsyncAction_SaveAnchor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UOculusXRAsyncAction_SaveAnchor), 1391214499U) },
@@ -2285,8 +2285,8 @@ void FOculusXR_LatentAction_ShareAnchors_Failure_DelegateWrapper(const FMulticas
 		{ Z_Construct_UClass_UOculusXRAsyncAction_SetComponentStatus, UOculusXRAsyncAction_SetComponentStatus::StaticClass, TEXT("UOculusXRAsyncAction_SetComponentStatus"), &Z_Registration_Info_UClass_UOculusXRAsyncAction_SetComponentStatus, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UOculusXRAsyncAction_SetComponentStatus), 597548838U) },
 		{ Z_Construct_UClass_UOculusXRAsyncAction_ShareAnchors, UOculusXRAsyncAction_ShareAnchors::StaticClass, TEXT("UOculusXRAsyncAction_ShareAnchors"), &Z_Registration_Info_UClass_UOculusXRAsyncAction_ShareAnchors, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UOculusXRAsyncAction_ShareAnchors), 2775691242U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_OculusXR_Source_OculusXRAnchors_Public_OculusXRAnchorLatentActions_h_2171706313(TEXT("/Script/OculusXRAnchors"),
-		Z_CompiledInDeferFile_FID_HostProject_Plugins_OculusXR_Source_OculusXRAnchors_Public_OculusXRAnchorLatentActions_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_OculusXR_Source_OculusXRAnchors_Public_OculusXRAnchorLatentActions_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorLatentActions_h_2171706313(TEXT("/Script/OculusXRAnchors"),
+		Z_CompiledInDeferFile_FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorLatentActions_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorLatentActions_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
