@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-OculusXRInput.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\OnSpace\Intermediate\Build\Win64\x64\OnspaceEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRInput\Module.OculusXRInput.cpp.obj"
+"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRInput\Default.rc2.res"
+/OUT:"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRInput\UnrealEditor-OculusXRInput.lib"

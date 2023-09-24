@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.OculusXRScene.cpp.obj": [
+			"OculusXRScene.init.gen.cpp.obj",
+			"OculusXRSceneActor.gen.cpp.obj",
+			"OculusXRSceneAnchorComponent.gen.cpp.obj",
+			"OculusXRSceneGlobalMeshComponent.gen.cpp.obj",
+			"OculusXRSceneActor.cpp.obj",
+			"OculusXRSceneAnchorComponent.cpp.obj",
+			"OculusXRSceneGlobalMeshComponent.cpp.obj",
+			"OculusXRSceneModule.cpp.obj"
+		]
+	}
+}

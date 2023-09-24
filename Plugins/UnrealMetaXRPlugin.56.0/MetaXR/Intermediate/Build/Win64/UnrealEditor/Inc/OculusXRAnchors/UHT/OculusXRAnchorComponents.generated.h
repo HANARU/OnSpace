@@ -1,0 +1,833 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "OculusXRAnchorComponents.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+enum class EOculusXRSpaceComponentType : uint8;
+struct FOculusXRUUID;
+#ifdef OCULUSXRANCHORS_OculusXRAnchorComponents_generated_h
+#error "OculusXRAnchorComponents.generated.h already included, missing '#pragma once' in OculusXRAnchorComponents.h"
+#endif
+#define OCULUSXRANCHORS_OculusXRAnchorComponents_generated_h
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_SPARSE_DATA
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetType); \
+	DECLARE_FUNCTION(execIsComponentEnabled);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetType); \
+	DECLARE_FUNCTION(execIsComponentEnabled);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_ACCESSORS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUOculusXRBaseAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRBaseAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRBaseAnchorComponent, UObject, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRBaseAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_INCLASS \
+private: \
+	static void StaticRegisterNativesUOculusXRBaseAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRBaseAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRBaseAnchorComponent, UObject, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRBaseAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UOculusXRBaseAnchorComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UOculusXRBaseAnchorComponent) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRBaseAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRBaseAnchorComponent); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRBaseAnchorComponent(UOculusXRBaseAnchorComponent&&); \
+	NO_API UOculusXRBaseAnchorComponent(const UOculusXRBaseAnchorComponent&); \
+public: \
+	NO_API virtual ~UOculusXRBaseAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UOculusXRBaseAnchorComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRBaseAnchorComponent(UOculusXRBaseAnchorComponent&&); \
+	NO_API UOculusXRBaseAnchorComponent(const UOculusXRBaseAnchorComponent&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRBaseAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRBaseAnchorComponent); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UOculusXRBaseAnchorComponent) \
+	NO_API virtual ~UOculusXRBaseAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_14_PROLOG
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_RPC_WRAPPERS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_INCLASS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_INCLASS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_17_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> OCULUSXRANCHORS_API UClass* StaticClass<class UOculusXRBaseAnchorComponent>();
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_SPARSE_DATA
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetTransform);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetTransform);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_ACCESSORS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUOculusXRLocatableAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRLocatableAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRLocatableAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRLocatableAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_INCLASS \
+private: \
+	static void StaticRegisterNativesUOculusXRLocatableAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRLocatableAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRLocatableAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRLocatableAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UOculusXRLocatableAnchorComponent(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UOculusXRLocatableAnchorComponent) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRLocatableAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRLocatableAnchorComponent); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRLocatableAnchorComponent(UOculusXRLocatableAnchorComponent&&); \
+	NO_API UOculusXRLocatableAnchorComponent(const UOculusXRLocatableAnchorComponent&); \
+public: \
+	NO_API virtual ~UOculusXRLocatableAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRLocatableAnchorComponent(UOculusXRLocatableAnchorComponent&&); \
+	NO_API UOculusXRLocatableAnchorComponent(const UOculusXRLocatableAnchorComponent&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRLocatableAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRLocatableAnchorComponent); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UOculusXRLocatableAnchorComponent) \
+	NO_API virtual ~UOculusXRLocatableAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_40_PROLOG
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_RPC_WRAPPERS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_INCLASS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_INCLASS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_43_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> OCULUSXRANCHORS_API UClass* StaticClass<class UOculusXRLocatableAnchorComponent>();
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_SPARSE_DATA
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetPositionAndSize);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetPositionAndSize);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_ACCESSORS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUOculusXRPlaneAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRPlaneAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRPlaneAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRPlaneAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_INCLASS \
+private: \
+	static void StaticRegisterNativesUOculusXRPlaneAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRPlaneAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRPlaneAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRPlaneAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UOculusXRPlaneAnchorComponent(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UOculusXRPlaneAnchorComponent) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRPlaneAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRPlaneAnchorComponent); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRPlaneAnchorComponent(UOculusXRPlaneAnchorComponent&&); \
+	NO_API UOculusXRPlaneAnchorComponent(const UOculusXRPlaneAnchorComponent&); \
+public: \
+	NO_API virtual ~UOculusXRPlaneAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRPlaneAnchorComponent(UOculusXRPlaneAnchorComponent&&); \
+	NO_API UOculusXRPlaneAnchorComponent(const UOculusXRPlaneAnchorComponent&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRPlaneAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRPlaneAnchorComponent); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UOculusXRPlaneAnchorComponent) \
+	NO_API virtual ~UOculusXRPlaneAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_54_PROLOG
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_RPC_WRAPPERS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_INCLASS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_INCLASS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_57_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> OCULUSXRANCHORS_API UClass* StaticClass<class UOculusXRPlaneAnchorComponent>();
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_SPARSE_DATA
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetPositionAndSize);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetPositionAndSize);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_ACCESSORS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUOculusXRVolumeAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRVolumeAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRVolumeAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRVolumeAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_INCLASS \
+private: \
+	static void StaticRegisterNativesUOculusXRVolumeAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRVolumeAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRVolumeAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRVolumeAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UOculusXRVolumeAnchorComponent(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UOculusXRVolumeAnchorComponent) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRVolumeAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRVolumeAnchorComponent); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRVolumeAnchorComponent(UOculusXRVolumeAnchorComponent&&); \
+	NO_API UOculusXRVolumeAnchorComponent(const UOculusXRVolumeAnchorComponent&); \
+public: \
+	NO_API virtual ~UOculusXRVolumeAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRVolumeAnchorComponent(UOculusXRVolumeAnchorComponent&&); \
+	NO_API UOculusXRVolumeAnchorComponent(const UOculusXRVolumeAnchorComponent&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRVolumeAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRVolumeAnchorComponent); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UOculusXRVolumeAnchorComponent) \
+	NO_API virtual ~UOculusXRVolumeAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_68_PROLOG
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_RPC_WRAPPERS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_INCLASS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_INCLASS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_71_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> OCULUSXRANCHORS_API UClass* StaticClass<class UOculusXRVolumeAnchorComponent>();
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_SPARSE_DATA
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetSemanticClassifications);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetSemanticClassifications);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_ACCESSORS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUOculusXRSemanticClassificationAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRSemanticClassificationAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRSemanticClassificationAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRSemanticClassificationAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_INCLASS \
+private: \
+	static void StaticRegisterNativesUOculusXRSemanticClassificationAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRSemanticClassificationAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRSemanticClassificationAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRSemanticClassificationAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UOculusXRSemanticClassificationAnchorComponent(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UOculusXRSemanticClassificationAnchorComponent) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRSemanticClassificationAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRSemanticClassificationAnchorComponent); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRSemanticClassificationAnchorComponent(UOculusXRSemanticClassificationAnchorComponent&&); \
+	NO_API UOculusXRSemanticClassificationAnchorComponent(const UOculusXRSemanticClassificationAnchorComponent&); \
+public: \
+	NO_API virtual ~UOculusXRSemanticClassificationAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRSemanticClassificationAnchorComponent(UOculusXRSemanticClassificationAnchorComponent&&); \
+	NO_API UOculusXRSemanticClassificationAnchorComponent(const UOculusXRSemanticClassificationAnchorComponent&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRSemanticClassificationAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRSemanticClassificationAnchorComponent); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UOculusXRSemanticClassificationAnchorComponent) \
+	NO_API virtual ~UOculusXRSemanticClassificationAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_82_PROLOG
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_RPC_WRAPPERS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_INCLASS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_INCLASS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_85_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> OCULUSXRANCHORS_API UClass* StaticClass<class UOculusXRSemanticClassificationAnchorComponent>();
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_SPARSE_DATA
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetRoomLayout);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetRoomLayout);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_ACCESSORS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUOculusXRRoomLayoutAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRRoomLayoutAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRRoomLayoutAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRRoomLayoutAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_INCLASS \
+private: \
+	static void StaticRegisterNativesUOculusXRRoomLayoutAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRRoomLayoutAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRRoomLayoutAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRRoomLayoutAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UOculusXRRoomLayoutAnchorComponent(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UOculusXRRoomLayoutAnchorComponent) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRRoomLayoutAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRRoomLayoutAnchorComponent); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRRoomLayoutAnchorComponent(UOculusXRRoomLayoutAnchorComponent&&); \
+	NO_API UOculusXRRoomLayoutAnchorComponent(const UOculusXRRoomLayoutAnchorComponent&); \
+public: \
+	NO_API virtual ~UOculusXRRoomLayoutAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRRoomLayoutAnchorComponent(UOculusXRRoomLayoutAnchorComponent&&); \
+	NO_API UOculusXRRoomLayoutAnchorComponent(const UOculusXRRoomLayoutAnchorComponent&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRRoomLayoutAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRRoomLayoutAnchorComponent); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UOculusXRRoomLayoutAnchorComponent) \
+	NO_API virtual ~UOculusXRRoomLayoutAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_96_PROLOG
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_RPC_WRAPPERS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_INCLASS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_INCLASS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_99_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> OCULUSXRANCHORS_API UClass* StaticClass<class UOculusXRRoomLayoutAnchorComponent>();
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_SPARSE_DATA
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetUUIDs);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetUUIDs);
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_ACCESSORS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUOculusXRSpaceContainerAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRSpaceContainerAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRSpaceContainerAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRSpaceContainerAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_INCLASS \
+private: \
+	static void StaticRegisterNativesUOculusXRSpaceContainerAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRSpaceContainerAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRSpaceContainerAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRSpaceContainerAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UOculusXRSpaceContainerAnchorComponent(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UOculusXRSpaceContainerAnchorComponent) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRSpaceContainerAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRSpaceContainerAnchorComponent); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRSpaceContainerAnchorComponent(UOculusXRSpaceContainerAnchorComponent&&); \
+	NO_API UOculusXRSpaceContainerAnchorComponent(const UOculusXRSpaceContainerAnchorComponent&); \
+public: \
+	NO_API virtual ~UOculusXRSpaceContainerAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRSpaceContainerAnchorComponent(UOculusXRSpaceContainerAnchorComponent&&); \
+	NO_API UOculusXRSpaceContainerAnchorComponent(const UOculusXRSpaceContainerAnchorComponent&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRSpaceContainerAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRSpaceContainerAnchorComponent); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UOculusXRSpaceContainerAnchorComponent) \
+	NO_API virtual ~UOculusXRSpaceContainerAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_110_PROLOG
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_RPC_WRAPPERS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_INCLASS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_INCLASS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_113_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> OCULUSXRANCHORS_API UClass* StaticClass<class UOculusXRSpaceContainerAnchorComponent>();
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_SPARSE_DATA
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_RPC_WRAPPERS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_ACCESSORS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUOculusXRSharableAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRSharableAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRSharableAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRSharableAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_INCLASS \
+private: \
+	static void StaticRegisterNativesUOculusXRSharableAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRSharableAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRSharableAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRSharableAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UOculusXRSharableAnchorComponent(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UOculusXRSharableAnchorComponent) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRSharableAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRSharableAnchorComponent); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRSharableAnchorComponent(UOculusXRSharableAnchorComponent&&); \
+	NO_API UOculusXRSharableAnchorComponent(const UOculusXRSharableAnchorComponent&); \
+public: \
+	NO_API virtual ~UOculusXRSharableAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRSharableAnchorComponent(UOculusXRSharableAnchorComponent&&); \
+	NO_API UOculusXRSharableAnchorComponent(const UOculusXRSharableAnchorComponent&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRSharableAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRSharableAnchorComponent); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UOculusXRSharableAnchorComponent) \
+	NO_API virtual ~UOculusXRSharableAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_124_PROLOG
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_RPC_WRAPPERS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_INCLASS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_INCLASS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_127_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> OCULUSXRANCHORS_API UClass* StaticClass<class UOculusXRSharableAnchorComponent>();
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_SPARSE_DATA
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_RPC_WRAPPERS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_ACCESSORS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUOculusXRStorableAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRStorableAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRStorableAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRStorableAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_INCLASS \
+private: \
+	static void StaticRegisterNativesUOculusXRStorableAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRStorableAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRStorableAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRStorableAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UOculusXRStorableAnchorComponent(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UOculusXRStorableAnchorComponent) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRStorableAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRStorableAnchorComponent); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRStorableAnchorComponent(UOculusXRStorableAnchorComponent&&); \
+	NO_API UOculusXRStorableAnchorComponent(const UOculusXRStorableAnchorComponent&); \
+public: \
+	NO_API virtual ~UOculusXRStorableAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRStorableAnchorComponent(UOculusXRStorableAnchorComponent&&); \
+	NO_API UOculusXRStorableAnchorComponent(const UOculusXRStorableAnchorComponent&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRStorableAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRStorableAnchorComponent); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UOculusXRStorableAnchorComponent) \
+	NO_API virtual ~UOculusXRStorableAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_135_PROLOG
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_RPC_WRAPPERS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_INCLASS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_INCLASS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_138_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> OCULUSXRANCHORS_API UClass* StaticClass<class UOculusXRStorableAnchorComponent>();
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_SPARSE_DATA
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_RPC_WRAPPERS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_ACCESSORS
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUOculusXRTriangleMeshAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRTriangleMeshAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRTriangleMeshAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRTriangleMeshAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_INCLASS \
+private: \
+	static void StaticRegisterNativesUOculusXRTriangleMeshAnchorComponent(); \
+	friend struct Z_Construct_UClass_UOculusXRTriangleMeshAnchorComponent_Statics; \
+public: \
+	DECLARE_CLASS(UOculusXRTriangleMeshAnchorComponent, UOculusXRBaseAnchorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/OculusXRAnchors"), NO_API) \
+	DECLARE_SERIALIZER(UOculusXRTriangleMeshAnchorComponent)
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UOculusXRTriangleMeshAnchorComponent(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UOculusXRTriangleMeshAnchorComponent) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRTriangleMeshAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRTriangleMeshAnchorComponent); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRTriangleMeshAnchorComponent(UOculusXRTriangleMeshAnchorComponent&&); \
+	NO_API UOculusXRTriangleMeshAnchorComponent(const UOculusXRTriangleMeshAnchorComponent&); \
+public: \
+	NO_API virtual ~UOculusXRTriangleMeshAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UOculusXRTriangleMeshAnchorComponent(UOculusXRTriangleMeshAnchorComponent&&); \
+	NO_API UOculusXRTriangleMeshAnchorComponent(const UOculusXRTriangleMeshAnchorComponent&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UOculusXRTriangleMeshAnchorComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UOculusXRTriangleMeshAnchorComponent); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UOculusXRTriangleMeshAnchorComponent) \
+	NO_API virtual ~UOculusXRTriangleMeshAnchorComponent();
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_146_PROLOG
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_RPC_WRAPPERS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_INCLASS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_SPARSE_DATA \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_ACCESSORS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_INCLASS_NO_PURE_DECLS \
+	FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h_149_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> OCULUSXRANCHORS_API UClass* StaticClass<class UOculusXRTriangleMeshAnchorComponent>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_OnSpace_Plugins_UnrealMetaXRPlugin_56_0_MetaXR_Source_OculusXRAnchors_Public_OculusXRAnchorComponents_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

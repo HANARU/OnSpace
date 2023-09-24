@@ -49,45 +49,46 @@ void AItemBase::ExecuteGrab(UMotionControllerComponent* MotionControllerToGrab)
 	MotionController = MotionControllerToGrab;
 	Player = Cast<AVRPlayer>(MotionController->GetOwner());
 	
-	if(this->objectName==TEXT("Blaster")) bIsBlaster = true;
-	
-	if (bIsBlaster)
+	if (this->objectName == TEXT("Blaster"))
 	{
-		if (Player->motionControllerLeft)
+		bIsBlaster = true;
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Silver, TEXT("Blaster Check"));
+	}
+	
+	if (bIsBlaster && MotionController == Player->motionControllerLeft)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 4.f, FColor::Yellow, TEXT("Left Grab!"));
+		if (bHasGravity)
 		{
-			if (bHasGravity)
-			{
-				ItemBody->SetSimulatePhysics(false);
-				AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
-					"Left_BlasterLoc"));
-				GEngine->AddOnScreenDebugMessage(-1,2.f,FColor::Yellow,TEXT("Left Grab!"));
-			}
-			else
-			{
-				AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
-					"Left_BlasterLoc"));
-				ItemBody->SetSimulatePhysics(bHasGravity);
-				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Left Grab!"));
-			}
+			ItemBody->SetSimulatePhysics(false);
+			AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
+				"Left_BlasterLoc"));
 		}
-		else if(Player->motionControllerRight)
+		else
 		{
-			if (bHasGravity)
-			{
-				ItemBody->SetSimulatePhysics(false);
-				AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
-					"Right_BlasterLoc"));
-				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Right Grab!"));
-			}
-			else
-			{
-				AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
-					"Right_BlasterLoc"));
-				ItemBody->SetSimulatePhysics(bHasGravity);
-				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Right Grab!"));
-			}
+			AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
+				"Left_BlasterLoc"));
+			ItemBody->SetSimulatePhysics(bHasGravity);
+		}
+
+	}
+	else if (bIsBlaster && MotionController == Player->motionControllerRight)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 4.f, FColor::Yellow, TEXT("Right Grab!"));
+		if (bHasGravity)
+		{
+			ItemBody->SetSimulatePhysics(false);
+			AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
+				"Right_BlasterLoc"));
+		}
+		else
+		{
+			AttachToComponent(Player->compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(
+				"Right_BlasterLoc"));
+			ItemBody->SetSimulatePhysics(bHasGravity);
 		}
 	}
+
 	else
 	{
 		if (bHasGravity)
