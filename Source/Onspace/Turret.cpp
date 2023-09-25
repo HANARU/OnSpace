@@ -1,5 +1,6 @@
 #include "Turret.h"
 #include "VRPlayer.h"
+#include "BlasterBullet.h"
 #include "Components/SphereComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 
@@ -48,6 +49,7 @@ void ATurret::BeginPlay()
 
 	DetectCollision->OnComponentBeginOverlap.AddDynamic(this, &ATurret::OnBeginOverlap_Detect);
 	DetectCollision->OnComponentEndOverlap.AddDynamic(this, &ATurret::OnEndOverlap_Detect);
+	TurretHead->OnComponentBeginOverlap.AddDynamic(this, &ATurret::OnBeginOverlap_Damage);
 }
 
 void ATurret::Tick(float DeltaTime)
@@ -90,6 +92,27 @@ void ATurret::Activation()
 
 		Shoot2Player();
 	}
+}
+
+void ATurret::OnBeginOverlap_Damage(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	ABlasterBullet* Bullet = Cast<ABlasterBullet>(OtherActor);
+
+	if (Bullet != nullptr)
+	{
+		if (TurretHP <= 0)
+		{
+			DestroyAction_Implementation();
+		}
+		else
+		{
+			TurretHP--;
+		}
+	}
+}
+
+void ATurret::DestroyAction_Implementation()
+{
 }
 
 void ATurret::Shoot2Player_Implementation()

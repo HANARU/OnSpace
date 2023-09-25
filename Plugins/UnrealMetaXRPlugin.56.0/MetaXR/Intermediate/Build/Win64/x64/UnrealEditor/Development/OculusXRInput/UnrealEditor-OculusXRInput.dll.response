@@ -20,7 +20,7 @@
 /DELAYLOAD:"d3d12.dll"
 /DELAYLOAD:"DBGHELP.DLL"
 /DELAYLOAD:"OVRPluginXR.dll"
-/LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\lib\x64"
+/LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\lib\x64"
 /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64"
 /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64"
 /NODEFAULTLIB:"LIBCMT"
@@ -36,8 +36,6 @@
 /FUNCTIONPADMIN:6
 "D:\OnSpace\Intermediate\Build\Win64\x64\OnspaceEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_0.h.obj"
 "D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRInput\Module.OculusXRInput.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRInput\OculusXRHandComponent.gen.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRInput\OculusXRInputFunctionLibrary.gen.cpp.obj"
 "D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRInput\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\CoreUObject\UnrealEditor-CoreUObject.lib"

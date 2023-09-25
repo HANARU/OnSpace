@@ -27,10 +27,11 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Turret)
 	class USphereComponent* DetectCollision;
 
-	bool bDetectedPlayer;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Player)
 	class AVRPlayer* VRPlayer;
+
+	bool bDetectedPlayer;
+	int32 TurretHP = 2;
 
 protected:
 	virtual void BeginPlay() override;
@@ -46,6 +47,12 @@ public:
 
 	void Activation();
 
+	UFUNCTION()
+	void OnBeginOverlap_Damage(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
 	UFUNCTION(BlueprintNativeEvent)
 	void Shoot2Player();
+
+	UFUNCTION(BlueprintNativeEvent)
+	void DestroyAction();
 };
