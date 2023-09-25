@@ -20,6 +20,8 @@
 #include "InventoryComponent.h"
 #include "GaugeBase.h"
 #include "Materials/Material.h"
+#include "Kismet/GameplayStatics.h"
+#include "Components/AudioComponent.h"
 
 // Sets default values
 AVRPlayer::AVRPlayer()
@@ -159,6 +161,10 @@ void AVRPlayer::BeginPlay()
 
 	OxygenGauge->AttachToComponent(compSkeletal, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName(TEXT("Gauge")));
 
+	Suffocation = LoadObject<USoundBase>(nullptr, TEXT("/Game/8_Sound/Breath/Suffocation_01.Suffocation_01"));
+	
+	OxygenWarning = LoadObject<USoundBase>(nullptr, TEXT("/Game/8_Sound/GUI/S_Warning.S_Warning"));
+	
 }
 
 // Called every frame
@@ -353,10 +359,17 @@ void AVRPlayer::CheckOxygenLeak()
 		OxygenLeakSound = true;
 		// Play Sound 2D : Oxygen Leak
 		
+		if(!PlaySuffocation)
+		{ 
+			SuffocationSound = UGameplayStatics::SpawnSound2D(GetWorld(), Suffocation);
+			WarningSound = UGameplayStatics::SpawnSound2D(GetWorld(), OxygenWarning);
+			PlaySuffocation = true;
+		}
 		CheckOxygenCharge();
 	}
 	else
 	{
+		PlaySuffocation =false;
 		OxygenLeakSound = false;
 		// Change Color OxygenStableColor
 		OxygenGauge->SetVectorParameterValueOnMaterials(TEXT("BaseColor"), OxygenEnoughColor);

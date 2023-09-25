@@ -2,15 +2,15 @@
 	"RemapUnityFiles": 
 	{
 		"Module.OculusXRInput.cpp.obj": [
-			"OculusXRHandComponent.gen.cpp.obj",
 			"OculusXRInput.init.gen.cpp.obj",
-			"OculusXRInputFunctionLibrary.gen.cpp.obj",
 			"OculusXRControllerTracking.cpp.obj",
 			"OculusXRHandComponent.cpp.obj",
 			"OculusXRHandTracking.cpp.obj",
 			"OculusXRInput.cpp.obj",
 			"OculusXRInputFunctionLibrary.cpp.obj",
-			"OculusXRInputModule.cpp.obj"
+			"OculusXRInputModule.cpp.obj",
+			"OculusXRHandComponent.gen.cpp.obj",
+			"OculusXRInputFunctionLibrary.gen.cpp.obj"
 		]
 	}
 }

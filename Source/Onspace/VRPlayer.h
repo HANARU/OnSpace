@@ -154,6 +154,26 @@ public:
 	bool OxygenLeakSound = false;
 	float OxygenLeak = 60;
 
+
+	/*------  Sound  --------*/
+	//Suffocation Sound
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class USoundBase* Suffocation;
+
+	//Suffocation Sound Comp
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class UAudioComponent* SuffocationSound;
+	bool PlaySuffocation = false;
+
+	//Warning Sound
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class USoundBase* OxygenWarning;
+
+	//Warning Sound Comp
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class UAudioComponent* WarningSound;
+
+
 	void CheckOxygenLeak();
 	void CheckOxygenCharge();
 	void IncreaseOxygen();

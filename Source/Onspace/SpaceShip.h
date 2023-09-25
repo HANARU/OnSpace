@@ -70,6 +70,25 @@ public:
 	FVector ExteriorDoorInitLocation;
 	FVector InteriorDoorInitLocation;
 
+//Space Ambient Sound
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class USoundBase* SpaceAmbient;
+
+//Basic Ambient Sound
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class USoundBase* BasicAmbient;
+
+//Breath Enter Space Sound
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class USoundBase* BreathEnterSpace;
+
+//Ambient Component
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class UAudioComponent* AmbientSound;
+
+//Breath Enter Space Component
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class UAudioComponent* BreathEnterSpaceSound;
 
 public:
 	UFUNCTION()

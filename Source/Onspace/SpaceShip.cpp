@@ -3,6 +3,7 @@
 #include "Components/BoxComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Components/AudioComponent.h"
 
 // Sets default values
 ASpaceShip::ASpaceShip()
@@ -126,7 +127,14 @@ void ASpaceShip::BeginPlay()
 	HiddenInterior->OnComponentBeginOverlap.AddDynamic(this, &ASpaceShip::OnBeginOverlap_HiddenInterior);
 	HiddenInterior->OnComponentEndOverlap.AddDynamic(this, &ASpaceShip::OnEndOverlap_HiddenInterior);
 
-	
+	//SpaceAmbient Sound Source Import
+	SpaceAmbient = LoadObject<USoundBase>(nullptr,TEXT("/Game/8_Sound/Ambient/S_SpaceAmbient_Modified.S_SpaceAmbient_Modified"));
+
+	//BasicAmbient Sound Source Import
+	BasicAmbient = LoadObject<USoundBase>(nullptr, TEXT("/Game/8_Sound/Ambient/S_BasicAmbient_Modified.S_BasicAmbient_Modified"));
+
+	//Breath EnterSpace Sound Source Import
+	BreathEnterSpace = LoadObject<USoundBase>(nullptr, TEXT("/Game/8_Sound/Breath/Breath_InSpace_03.Breath_InSpace_03"));
 }
 
 void ASpaceShip::OnBeginOverlap_Walk2Fly(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -140,8 +148,16 @@ void ASpaceShip::OnBeginOverlap_Walk2Fly(UPrimitiveComponent* OverlappedComp, AA
 		{
 			MovementComponent->SetMovementMode(EMovementMode::MOVE_Flying);
 			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Overlap"));
+			//If move SpaceShip to Space, Play SpaceAmbient 
+			if (AmbientSound != nullptr) AmbientSound->Stop();
+			AmbientSound = UGameplayStatics::SpawnSound2D(GetWorld(), SpaceAmbient);
+
+			BreathEnterSpaceSound = UGameplayStatics::SpawnSound2D(GetWorld(), BreathEnterSpace);
 		}
 	}
+
+	
+
 }
 
 void ASpaceShip::OnBeginOverlap_Fly2Walk(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -154,8 +170,14 @@ void ASpaceShip::OnBeginOverlap_Fly2Walk(UPrimitiveComponent* OverlappedComp, AA
 		if (MovementComponent->IsFlying())
 		{
 			MovementComponent->SetMovementMode(EMovementMode::MOVE_Walking);
+			//If move Space to SpaceShip, Play BasicAmbient 
+			if (AmbientSound != nullptr) AmbientSound->Stop();
+			AmbientSound = UGameplayStatics::SpawnSound2D(GetWorld(),
+				BasicAmbient);
+			BreathEnterSpaceSound = UGameplayStatics::SpawnSound2D(GetWorld(), BreathEnterSpace);
 		}
 	}
+	
 }
 
 void ASpaceShip::OnBeginOverlap_HiddenInterior(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
