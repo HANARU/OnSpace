@@ -37,11 +37,11 @@ ASpaceShip::ASpaceShip()
 	compInterior = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Interior"));
 	compInterior->SetupAttachment(BaseComponent);
 	compInterior->SetVisibility(true);
-	ConstructorHelpers::FObjectFinder<UStaticMesh> tempInterior(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PlayerShip_Interior/SM_SpaceCruiser_FullInterior_Simple.SM_SpaceCruiser_FullInterior_Simple'"));
+	ConstructorHelpers::FObjectFinder<UStaticMesh> tempInterior(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PlayerShip_Interior/SM_Interior_NoneControllRoomDoor.SM_Interior_NoneControllRoomDoor'"));
 	if (tempInterior.Succeeded())
 	{
 		compInterior->SetStaticMesh(tempInterior.Object);
-		compInterior->SetRelativeLocation(FVector(-1573.0f, -14, -654));
+		compInterior->SetRelativeLocation(FVector(-202.0f, -2.0f, 25.0f));
 	}
 
 	//InteriorDoor Component
@@ -51,7 +51,7 @@ ASpaceShip::ASpaceShip()
 	if (tempInteriorDoor.Succeeded())
 	{
 		compInteriorDoor->SetStaticMesh(tempInteriorDoor.Object);
-		compInteriorDoor->SetRelativeLocation(FVector(794.0f, 14.0f, 654.0f));
+		compInteriorDoor->SetRelativeLocation(FVector(-582.0f, 2.0f, -27.0f));
 	}
 
 	//Lamps Comp
@@ -75,6 +75,28 @@ ASpaceShip::ASpaceShip()
 // 	}
 	diningRoomLamp->SetRelativeLocation(FVector(79.0, -332.0, 201.99));
 	diningRoomLamp->SetRelativeRotation(FRotator(180,0,0));
+
+	//Controller Door Component
+	ControllerDoor = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ControllerDoor"));
+	ControllerDoor->SetupAttachment(compInterior);
+	ConstructorHelpers::FObjectFinder<UStaticMesh> tempControllerDoor(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/CabinDoor/Mesh/SM_Cabin_Door.SM_Cabin_Door'"));
+	if (tempControllerDoor.Succeeded())
+	{
+		ControllerDoor->SetStaticMesh(tempControllerDoor.Object);
+	}
+	ControllerDoor->SetRelativeLocation(FVector(472.0f,112.0f, -148.0f));
+	ControllerDoor->SetRelativeScale3D(FVector(1.4f,1.0f,1.0f));
+
+	//W.C Door Component
+	BathRoomDoor = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BathRoomDoor"));
+	BathRoomDoor->SetupAttachment(compInterior);
+	ConstructorHelpers::FObjectFinder<UStaticMesh> tempBathRoomDoor(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PalyerShip_WCDoor/SM_DCruiser_WCDoor.SM_DCruiser_WCDoor'"));
+	if (tempBathRoomDoor.Succeeded())
+	{
+		BathRoomDoor->SetStaticMesh(tempBathRoomDoor.Object);
+	}
+	BathRoomDoor->SetRelativeLocation(FVector(-116.7f, -209.0f, 14.0f));
+	BathRoomDoor->SetRelativeScale3D(FVector(0.1f,1.0f,1.0f));
 
 	/*---------------  Collision COMP -------------------*/
 
@@ -139,6 +161,7 @@ void ASpaceShip::BeginPlay()
 
 void ASpaceShip::OnBeginOverlap_Walk2Fly(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	
 	AVRPlayer* VRPlayer = Cast<AVRPlayer>(OtherActor);
 	if (VRPlayer != nullptr)
 	{

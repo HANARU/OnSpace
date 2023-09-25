@@ -5,9 +5,9 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "D:/OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRScene/Public/OculusXRSceneActor.h"
-#include "D:/OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRAnchors/Public/OculusXRAnchorTypes.h"
-#include "D:/OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRAnchors/Public/OculusXRRoomLayoutManagerComponent.h"
+#include "../../../../../../../OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRScene/Public/OculusXRSceneActor.h"
+#include "../../../../../../../OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRAnchors/Public/OculusXRAnchorTypes.h"
+#include "../../../../../../../OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRAnchors/Public/OculusXRRoomLayoutManagerComponent.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeOculusXRSceneActor() {}
 // Cross Module References

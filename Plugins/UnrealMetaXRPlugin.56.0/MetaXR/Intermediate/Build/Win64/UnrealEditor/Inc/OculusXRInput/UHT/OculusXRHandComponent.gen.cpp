@@ -5,8 +5,8 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "D:/OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRInput/Public/OculusXRHandComponent.h"
-#include "D:/OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRInput/Public/OculusXRInputFunctionLibrary.h"
+#include "../../../../../../OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRInput/Public/OculusXRHandComponent.h"
+#include "../../../../../../OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRInput/Public/OculusXRInputFunctionLibrary.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeOculusXRHandComponent() {}
 // Cross Module References

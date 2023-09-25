@@ -48,7 +48,7 @@ public:
 	class UStaticMeshComponent* compExterior;
 
 //spaceship 바깥문
-	UPROPERTY(EditAnywhere,Category = "MySettings")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MySettings")
 	class UStaticMeshComponent* compExteriorDoor;
 
 //spaceship 내관
@@ -56,7 +56,7 @@ public:
 	class UStaticMeshComponent* compInterior;
 
 //spaceship 안쪽문
-	UPROPERTY(EditAnywhere,Category = "MySettings")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MySettings")
 	class UStaticMeshComponent* compInteriorDoor;
 
 //전체 조명
@@ -70,8 +70,17 @@ public:
 	FVector ExteriorDoorInitLocation;
 	FVector InteriorDoorInitLocation;
 
+//Controller Door
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "MySettings")
+	class UStaticMeshComponent* ControllerDoor;
+
+//W.C Door
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MySettings")
+	class UStaticMeshComponent* BathRoomDoor;
+
+
 //Space Ambient Sound
-	UPROPERTY(EditAnywhere, Category = "Sound")
+	UPROPERTY(EditAnywhere,  Category = "Sound")
 	class USoundBase* SpaceAmbient;
 
 //Basic Ambient Sound
