@@ -27,7 +27,7 @@ ATurret::ATurret()
 	DetectCollision = CreateDefaultSubobject<USphereComponent>(TEXT("Collision"));
 	DetectCollision->SetupAttachment(SceneRoot);
 	DetectCollision->SetCollisionProfileName(TEXT("AreaCollsiion"));
-	DetectCollision->SetSphereRadius(1024);
+	DetectCollision->SetSphereRadius(2048);
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> Mesh_Body(TEXT("/Game/3_SM/Turret/SmallTurretBottom/Mesh/SM_BaseConstructor_Turret_1"));
 	if (Mesh_Body.Succeeded())

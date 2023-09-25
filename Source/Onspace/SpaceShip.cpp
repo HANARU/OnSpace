@@ -37,7 +37,7 @@ ASpaceShip::ASpaceShip()
 	compInterior = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Interior"));
 	compInterior->SetupAttachment(BaseComponent);
 	compInterior->SetVisibility(true);
-	ConstructorHelpers::FObjectFinder<UStaticMesh> tempInterior(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PlayerShip_Interior/SM_Interior_NoneControllRoomDoor.SM_Interior_NoneControllRoomDoor'"));
+	ConstructorHelpers::FObjectFinder<UStaticMesh> tempInterior(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/PlayerShip_Interior/SM_Interior_NoneControllRoomDoor1.SM_Interior_NoneControllRoomDoor1'"));
 	if (tempInterior.Succeeded())
 	{
 		compInterior->SetStaticMesh(tempInterior.Object);
@@ -161,7 +161,7 @@ void ASpaceShip::BeginPlay()
 
 void ASpaceShip::OnBeginOverlap_Walk2Fly(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Overlap"));
 	AVRPlayer* VRPlayer = Cast<AVRPlayer>(OtherActor);
 	if (VRPlayer != nullptr)
 	{
@@ -170,7 +170,7 @@ void ASpaceShip::OnBeginOverlap_Walk2Fly(UPrimitiveComponent* OverlappedComp, AA
 		if (MovementComponent->IsWalking())
 		{
 			MovementComponent->SetMovementMode(EMovementMode::MOVE_Flying);
-			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Overlap"));
+			
 			//If move SpaceShip to Space, Play SpaceAmbient 
 			if (AmbientSound != nullptr) AmbientSound->Stop();
 			AmbientSound = UGameplayStatics::SpawnSound2D(GetWorld(), SpaceAmbient);
@@ -185,7 +185,9 @@ void ASpaceShip::OnBeginOverlap_Walk2Fly(UPrimitiveComponent* OverlappedComp, AA
 
 void ASpaceShip::OnBeginOverlap_Fly2Walk(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Overlap"));
 	AVRPlayer* VRPlayer = Cast<AVRPlayer>(OtherActor);
+	
 	if (VRPlayer != nullptr)
 	{
 		VRPlayer->OxygenChargeActivate = true;
