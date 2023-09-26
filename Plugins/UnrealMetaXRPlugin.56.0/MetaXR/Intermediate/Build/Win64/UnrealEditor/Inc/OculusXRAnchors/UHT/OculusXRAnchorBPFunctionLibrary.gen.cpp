@@ -5,8 +5,8 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "../../../../../../../OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRAnchors/Public/OculusXRAnchorBPFunctionLibrary.h"
-#include "../../../../../../../OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRAnchors/Public/OculusXRAnchorTypes.h"
+#include "D:/OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRAnchors/Public/OculusXRAnchorBPFunctionLibrary.h"
+#include "D:/OnSpace/Plugins/UnrealMetaXRPlugin.56.0/MetaXR/Source/OculusXRAnchors/Public/OculusXRAnchorTypes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeOculusXRAnchorBPFunctionLibrary() {}
 // Cross Module References

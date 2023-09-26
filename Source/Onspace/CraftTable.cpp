@@ -94,11 +94,16 @@ void ACraftTable::CheckRecipe_Inductor()
 		//Spawn Actor
 		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Recipe Checked! Ready for make Object"));
 		UE_LOG(LogTemp, Log, TEXT("Recipe Checked! Ready for make Object"));
+		MakeInductor();
 		//Destroy Widget;
 	}
 	else
 	{
 		Resource->Destroy();
 	}
+}
+
+void ACraftTable::MakeInductor_Implementation()
+{
 }
 

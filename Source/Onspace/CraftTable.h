@@ -58,4 +58,7 @@ public:
 
 	void CheckRecipe_Inductor();
 
+	UFUNCTION(BlueprintNativeEvent)
+	void MakeInductor();
+
 };

@@ -71,6 +71,11 @@ Intermediate/*
 Plugins/*/Intermediate/*
 Plugins/*
 
+# Local Plugins
+**/Plugins/**/**/Intermediate/*
+**/Plugins/**/**/Binaries/*
+**/Plugins/**/**/Saved/*
+
 # Cache files for the editor to use
 DerivedDataCache/*
 *.pdb

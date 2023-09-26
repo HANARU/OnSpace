@@ -161,7 +161,7 @@ void ASpaceShip::BeginPlay()
 
 void ASpaceShip::OnBeginOverlap_Walk2Fly(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Overlap"));
+	//GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Overlap"));
 	AVRPlayer* VRPlayer = Cast<AVRPlayer>(OtherActor);
 	if (VRPlayer != nullptr)
 	{
@@ -185,7 +185,7 @@ void ASpaceShip::OnBeginOverlap_Walk2Fly(UPrimitiveComponent* OverlappedComp, AA
 
 void ASpaceShip::OnBeginOverlap_Fly2Walk(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Overlap"));
+	//GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Overlap"));
 	AVRPlayer* VRPlayer = Cast<AVRPlayer>(OtherActor);
 	
 	if (VRPlayer != nullptr)
