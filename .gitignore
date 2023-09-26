@@ -70,6 +70,7 @@ Saved/*
 Intermediate/*
 Plugins/*/Intermediate/*
 Plugins/*
+/Plugins
 
 # Local Plugins
 **/Plugins/**/**/Intermediate/*

@@ -164,24 +164,6 @@
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchorcomponents.generated.h",
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchorbpfunctionlibrary.generated.h",
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\source\\oculusxrhmd\\private\\oculusxrdelegates.h",
-<<<<<<< Updated upstream
-            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\engine\\assetmanager.h",
-            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\engine\\assetmanagertypes.h",
-            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\assetmanagertypes.generated.h",
-            "d:\\ue_5.2\\engine\\source\\runtime\\coreuobject\\public\\misc\\assetregistryinterface.h",
-            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\engine\\streamablemanager.h",
-            "d:\\ue_5.2\\engine\\source\\runtime\\assetregistry\\public\\assetregistry\\assetregistrymodule.h",
-            "d:\\ue_5.2\\engine\\source\\runtime\\assetregistry\\public\\assetregistry\\iassetregistry.h",
-            "d:\\ue_5.2\\engine\\source\\runtime\\coreuobject\\public\\assetregistry\\arfilter.h",
-            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assetregistry\\uht\\iassetregistry.generated.h",
-            "d:\\ue_5.2\\engine\\source\\runtime\\core\\public\\genericplatform\\genericplatformchunkinstall.h",
-            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\engine\\contentencryptionconfig.h",
-            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\assetmanager.generated.h",
-            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\engine\\staticmeshactor.h",
-            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\staticmeshactor.generated.h",
-            "d:\\ue_5.2\\engine\\plugins\\runtime\\proceduralmeshcomponent\\source\\proceduralmeshcomponent\\public\\proceduralmeshcomponent.h",
-            "d:\\ue_5.2\\engine\\plugins\\runtime\\proceduralmeshcomponent\\intermediate\\build\\win64\\unrealeditor\\inc\\proceduralmeshcomponent\\uht\\proceduralmeshcomponent.generated.h",
-=======
             "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\engine\\assetmanager.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\engine\\assetmanagertypes.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\assetmanagertypes.generated.h",
@@ -198,7 +180,6 @@
             "c:\\program files\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\staticmeshactor.generated.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\proceduralmeshcomponent\\source\\proceduralmeshcomponent\\public\\proceduralmeshcomponent.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\proceduralmeshcomponent\\intermediate\\build\\win64\\unrealeditor\\inc\\proceduralmeshcomponent\\uht\\proceduralmeshcomponent.generated.h",
->>>>>>> Stashed changes
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\source\\oculusxrscene\\private\\oculusxrsceneanchorcomponent.cpp",
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\source\\oculusxrscene\\private\\oculusxrsceneglobalmeshcomponent.cpp",
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\source\\oculusxrscene\\private\\oculusxrscenemodule.cpp"

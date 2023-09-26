@@ -96,7 +96,7 @@ ASpaceShip::ASpaceShip()
 		BathRoomDoor->SetStaticMesh(tempBathRoomDoor.Object);
 	}
 	BathRoomDoor->SetRelativeLocation(FVector(-116.7f, -209.0f, 14.0f));
-	BathRoomDoor->SetRelativeScale3D(FVector(0.1f,1.0f,1.0f));
+	BathRoomDoor->SetRelativeScale3D(FVector(1.0f));
 
 	/*---------------  Collision COMP -------------------*/
 
@@ -211,6 +211,8 @@ void ASpaceShip::OnBeginOverlap_HiddenInterior(UPrimitiveComponent* OverlappedCo
 	if (VRPlayer != nullptr)
 	{
 		compInterior->SetVisibility(true);
+		ControllerDoor->SetVisibility(true);
+		BathRoomDoor->SetVisibility(true);
 		UE_LOG(LogTemp, Log, TEXT("Interior Show"));
 	}
 }
@@ -221,6 +223,8 @@ void ASpaceShip::OnEndOverlap_HiddenInterior(UPrimitiveComponent* OverlappedComp
 	if (VRPlayer != nullptr)
 	{
 		compInterior->SetVisibility(false);
+		ControllerDoor->SetVisibility(false);
+		BathRoomDoor->SetVisibility(false);
 		
 		UE_LOG(LogTemp, Log, TEXT("Interior Hidden"));
 	}

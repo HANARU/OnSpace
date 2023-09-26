@@ -9,15 +9,6 @@
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrinput\\uht\\oculusxrhandcomponent.gen.cpp",
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\source\\oculusxrinput\\public\\oculusxrhandcomponent.h",
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\source\\oculusxrinput\\public\\oculusxrinputfunctionlibrary.h",
-<<<<<<< Updated upstream
-            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\capsulecomponent.h",
-            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
-            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
-            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\capsulecomponent.generated.h",
-            "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrinput\\uht\\oculusxrinputfunctionlibrary.generated.h",
-            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\poseablemeshcomponent.h",
-            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\poseablemeshcomponent.generated.h",
-=======
             "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\capsulecomponent.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
@@ -25,7 +16,6 @@
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrinput\\uht\\oculusxrinputfunctionlibrary.generated.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\poseablemeshcomponent.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\poseablemeshcomponent.generated.h",
->>>>>>> Stashed changes
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrinput\\uht\\oculusxrhandcomponent.generated.h",
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrinput\\uht\\oculusxrinput.init.gen.cpp",
             "d:\\onspace\\plugins\\unrealmetaxrplugin.56.0\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrinput\\uht\\oculusxrinputfunctionlibrary.gen.cpp",
