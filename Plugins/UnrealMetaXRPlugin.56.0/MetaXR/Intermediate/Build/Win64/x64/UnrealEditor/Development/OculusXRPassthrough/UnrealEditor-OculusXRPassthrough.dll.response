@@ -35,8 +35,6 @@
 /FUNCTIONPADMIN:6
 "D:\OnSpace\Intermediate\Build\Win64\x64\OnspaceEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_0.h.obj"
 "D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRPassthrough\Module.OculusXRPassthrough.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRPassthrough\OculusXRPassthroughColorLut.gen.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRPassthrough\OculusXRPassthroughLayerComponent.gen.cpp.obj"
 "D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRPassthrough\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\CoreUObject\UnrealEditor-CoreUObject.lib"

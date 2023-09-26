@@ -2,15 +2,15 @@
 	"BuildId": "25360045",
 	"Modules": 
 	{
-		"OculusXRAnchors": "UnrealEditor-OculusXRAnchors.dll",
-		"OculusXREditor": "UnrealEditor-OculusXREditor.dll",
-		"OculusXREyeTracker": "UnrealEditor-OculusXREyeTracker.dll",
-		"OculusXRHMD": "UnrealEditor-OculusXRHMD.dll",
-		"OculusXRInput": "UnrealEditor-OculusXRInput.dll",
-		"OculusXRMR": "UnrealEditor-OculusXRMR.dll",
-		"OculusXRMovement": "UnrealEditor-OculusXRMovement.dll",
-		"OculusXROpenXRHMD": "UnrealEditor-OculusXROpenXRHMD.dll",
-		"OculusXRPassthrough": "UnrealEditor-OculusXRPassthrough.dll",
-		"OculusXRScene": "UnrealEditor-OculusXRScene.dll"
+		"OculusXRAnchors": "UnrealEditor-OculusXRAnchors-0028.dll",
+		"OculusXREditor": "UnrealEditor-OculusXREditor-0028.dll",
+		"OculusXREyeTracker": "UnrealEditor-OculusXREyeTracker-0028.dll",
+		"OculusXRHMD": "UnrealEditor-OculusXRHMD-0028.dll",
+		"OculusXRInput": "UnrealEditor-OculusXRInput-0028.dll",
+		"OculusXRMR": "UnrealEditor-OculusXRMR-0028.dll",
+		"OculusXRMovement": "UnrealEditor-OculusXRMovement-0028.dll",
+		"OculusXROpenXRHMD": "UnrealEditor-OculusXROpenXRHMD-0028.dll",
+		"OculusXRPassthrough": "UnrealEditor-OculusXRPassthrough-0028.dll",
+		"OculusXRScene": "UnrealEditor-OculusXRScene-0028.dll"
 	}
 }

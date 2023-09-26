@@ -22,6 +22,8 @@
 #include "Materials/Material.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/AudioComponent.h"
+#include "ItemBase.h"
+#include "BlasterBullet.h"
 
 // Sets default values
 AVRPlayer::AVRPlayer()
@@ -131,6 +133,18 @@ AVRPlayer::AVRPlayer()
 		IA_FlyValue = temp_FlyValue.Object;
 	}
 
+	static ConstructorHelpers::FObjectFinder<UInputAction>temp_Fire_Left(TEXT("/Game/7_MISC/Input/IA_Fire_Left.IA_Fire_Left"));
+	if (temp_Fire_Left.Succeeded())
+	{
+		IA_Fire_Left = temp_Fire_Left.Object;
+	}
+
+	static ConstructorHelpers::FObjectFinder<UInputAction>temp_Fire_Right(TEXT("/Game/7_MISC/Input/IA_Fire_Right.IA_Fire_Right"));
+	if (temp_Fire_Right.Succeeded())
+	{
+		IA_Fire_Right = temp_Fire_Right.Object;
+	}
+
 	GrabGravityActor = nullptr;
 
 }
@@ -196,6 +210,13 @@ void AVRPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	//Grab Right
 		EnhancedInputComponent->BindAction(IA_Grab_Right, ETriggerEvent::Started, this, &AVRPlayer::Grab_Right_Started);
 		EnhancedInputComponent->BindAction(IA_Grab_Right, ETriggerEvent::Completed, this, &AVRPlayer::Grab_Right_Closed);
+
+	//Fire_Right
+		EnhancedInputComponent->BindAction(IA_Fire_Right, ETriggerEvent::Started, this, &AVRPlayer::Fire_Right_Started);
+		
+	//Fire_Left
+		EnhancedInputComponent->BindAction(IA_Fire_Left, ETriggerEvent::Started, this, &AVRPlayer::Fire_Left_Started);
+
 	}
 }
 
@@ -344,6 +365,41 @@ void AVRPlayer::Grab_Right_Closed(const FInputActionValue& value)
 	{
 		GrabGravityActor->GrabbingController = nullptr;
 		GrabGravityActor = nullptr;
+	}
+}
+
+/*Blaster Fire*/
+void AVRPlayer::Fire_Left_Started(const FInputActionValue& value)
+{
+	if (GrabLeftActor != nullptr)
+	{
+		AItemBase* Resource = Cast<AItemBase>(GrabLeftActor);
+		FTransform ResourceTransform = Resource->ItemBody->GetSocketTransform("FireLoc", RTS_World);
+		if (Resource->objectName == "Blaster")
+		{
+			//Left Fire!
+			FActorSpawnParameters Parm;
+			Parm.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+			GetWorld()->SpawnActor<ABlasterBullet>(Bullet,ResourceTransform,Parm);
+			GEngine->AddOnScreenDebugMessage(-1,2.f,FColor::Red,TEXT("Left Fire!"));
+		}
+	}
+}
+
+void AVRPlayer::Fire_Right_Started(const FInputActionValue& value)
+{
+	if (GrabRightActor != nullptr)
+	{
+		AItemBase* Resource = Cast<AItemBase>(GrabRightActor);
+		FTransform ResourceTransform = Resource->ItemBody->GetSocketTransform("FireLoc", RTS_World);
+		if (Resource->objectName == "Blaster")
+		{
+			FActorSpawnParameters Parm;
+			Parm.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+			//Right Fire!
+			GetWorld()->SpawnActor<ABlasterBullet>(Bullet, ResourceTransform,Parm);
+			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Right Fire!"));
+		}
 	}
 }
 

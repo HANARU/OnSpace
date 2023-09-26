@@ -100,6 +100,7 @@ void ATurret::OnBeginOverlap_Damage(UPrimitiveComponent* OverlappedComp, AActor*
 
 	if (Bullet != nullptr)
 	{
+		GEngine->AddOnScreenDebugMessage(-1,2.f,FColor::Red,TEXT("Im sick.. cause bullet attacked me."));
 		if (TurretHP <= 0)
 		{
 			DestroyAction_Implementation();

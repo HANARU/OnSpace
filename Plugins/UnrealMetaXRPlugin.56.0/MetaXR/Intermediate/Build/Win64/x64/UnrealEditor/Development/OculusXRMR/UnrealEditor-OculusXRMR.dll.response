@@ -36,11 +36,6 @@
 /FUNCTIONPADMIN:6
 "D:\OnSpace\Intermediate\Build\Win64\x64\OnspaceEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.obj"
 "D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRMR\Module.OculusXRMR.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRMR\OculusXRMRFunctionLibrary.gen.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRMR\OculusXRMR_CastingCameraActor.gen.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRMR\OculusXRMR_PlaneMeshComponent.gen.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRMR\OculusXRMR_Settings.gen.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRMR\OculusXRMR_State.gen.cpp.obj"
 "D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRMR\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\CoreUObject\UnrealEditor-CoreUObject.lib"

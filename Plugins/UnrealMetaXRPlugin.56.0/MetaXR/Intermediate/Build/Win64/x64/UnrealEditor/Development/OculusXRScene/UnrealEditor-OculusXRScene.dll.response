@@ -35,9 +35,6 @@
 /FUNCTIONPADMIN:6
 "D:\OnSpace\Intermediate\Build\Win64\x64\OnspaceEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_0.h.obj"
 "D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRScene\Module.OculusXRScene.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRScene\OculusXRSceneActor.gen.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRScene\OculusXRSceneAnchorComponent.gen.cpp.obj"
-"D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRScene\OculusXRSceneGlobalMeshComponent.gen.cpp.obj"
 "D:\OnSpace\Plugins\UnrealMetaXRPlugin.56.0\MetaXR\Intermediate\Build\Win64\x64\UnrealEditor\Development\OculusXRScene\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\CoreUObject\UnrealEditor-CoreUObject.lib"

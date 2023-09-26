@@ -80,6 +80,13 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
 	class UInputAction* IA_Grab_Right;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	class UInputAction* IA_Fire_Right;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	class UInputAction* IA_Fire_Left;
+
+
 	//Bind Fuction
 	UFUNCTION(Category="Input", meta = (AllowPrivateAccess = "true"))
 	void Move(const FInputActionValue& value);
@@ -100,8 +107,12 @@ public:
 	void Grab_Right_Closed(const FInputActionValue& value);
 // 	UPROPERTY(VisibleAnywhere,Category = "Input", meta = (AllowPrivateAccess = "true"))
 // 	class UInputAction* ;
+	
+	UFUNCTION(Category = "Input", meta = (AllowPrivateAccess = "true"))
+	void Fire_Left_Started(const FInputActionValue& value);
 
-
+	UFUNCTION(Category = "Input", meta = (AllowPrivateAccess = "true"))
+	void Fire_Right_Started(const FInputActionValue& value);
 
 
 	/*---------- For value save -------------*/
@@ -128,6 +139,8 @@ public:
 	class AActor* GrabLeftActor;
 	UPROPERTY()
 	class AActor* GrabRightActor;
+	UPROPERTY(EditAnywhere, Category="MySetting")
+	TSubclassOf<class ABlasterBullet> Bullet;
 
 	bool bValidGrabGravityActor = false;
 
