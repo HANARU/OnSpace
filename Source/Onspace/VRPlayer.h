@@ -194,5 +194,5 @@ public:
 	void CalculateOxygen(bool CurrentCondition);
 
 
-	void ZeroGMovement();
+	void ZeroGMovement(float DeltaTime);
 };

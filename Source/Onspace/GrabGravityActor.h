@@ -12,16 +12,19 @@ class ONSPACE_API AGrabGravityActor : public AActor
 public:	
 	AGrabGravityActor();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coordination")
-	class UStaticMeshComponent* GrabbableBody;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coordination")
-	FVector GrabLocation;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coordination")
-	class UMotionControllerComponent* GrabbingController;
-
 protected:
 	virtual void BeginPlay() override;
 
+public:
+
+//Component
+	UPROPERTY(EditAnywhere,Category = "Coordination")
+	class UStaticMeshComponent* GrabbableBody;
+
+//Function Needes Variables
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coordination")
+	class UMotionControllerComponent* GrabbingHand;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Coordination")
+	FVector GrabLocation;
 };
