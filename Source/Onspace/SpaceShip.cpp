@@ -54,6 +54,27 @@ ASpaceShip::ASpaceShip()
 		compInteriorDoor->SetRelativeLocation(FVector(-582.0f, 2.0f, -27.0f));
 	}
 
+	//ControllRoom Collision
+	ControllRoomCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("ControllRoomCollision"));
+	ControllRoomCollision->SetupAttachment(RootComponent);
+	ControllRoomCollision->SetRelativeLocation(FVector(270.f,110.f,30.f));
+	ControllRoomCollision->SetRelativeScale3D(FVector(2.8f,3.0f,4.8f));
+	
+	//ControllRoomBottom
+	ControllRoomBottom = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ControllRoomBottom"));
+	ControllRoomBottom->SetupAttachment(compInterior);
+	ConstructorHelpers::FObjectFinder<UStaticMesh>tempControllRoomBottom(TEXT("/Script/Engine.StaticMesh'/Game/3_SM/ControllRoomBottom/ControllRoomBottom.ControllRoomBottom'"));
+
+	if (tempControllRoomBottom.Succeeded())
+	{
+		ControllRoomBottom->SetStaticMesh(tempControllRoomBottom.Object);
+		ControllRoomBottom->SetRelativeLocation(FVector(475.f, 112.f, -193.f));
+		ControllRoomBottom->SetRelativeScale3D(FVector(0.3f,2.0f,0.5f));
+	}
+
+// 	ControllRoomCollision->SetRelativeLocation(FVector(270.f, 110.f, 30.f));
+// 	ControllRoomCollision->SetRelativeScale3D(FVector(2.0f, 3.0f, 4.75f));
+
 	//Lamps Comp
 	Lamps = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Lamps"));
 	Lamps->SetupAttachment(BaseComponent);

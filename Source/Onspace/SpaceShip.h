@@ -29,7 +29,15 @@ public:
 //안쪽문 콜리젼
 	UPROPERTY(EditAnywhere, Category = "MySettings")
 	class UBoxComponent* compIndoorCollision;
-	
+
+//Controll Room Collision
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UBoxComponent* ControllRoomCollision;
+
+//Controll Room Bottom
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UStaticMeshComponent* ControllRoomBottom;
+
 // Fly Mode Collision
 	UPROPERTY(EditAnywhere,Category="MySettings")
 	class UBoxComponent* compFlyCollision;
