@@ -72,15 +72,20 @@ void ACraftTable::OnBeginOverlap_ItemVolume(UPrimitiveComponent* OverlappedComp,
 		if (ResourceName == TEXT("Metal"))
 		{
 			CurrentNum_Metal++;
-			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Metal Overlap"));
-			UE_LOG(LogTemp, Log, TEXT("Metal Overlap"));
+			/*GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Metal Overlap"));
+			UE_LOG(LogTemp, Log, TEXT("Metal Overlap"));*/
 			CheckRecipe_Inductor();
 		}
 		else if (ResourceName == TEXT("Plastic"))
 		{
 			CurrentNum_Plastic++;
-			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Plastic Overlap"));
-			UE_LOG(LogTemp, Log, TEXT("Plastic Overlap"));
+			/*GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Plastic Overlap"));
+			UE_LOG(LogTemp, Log, TEXT("Plastic Overlap"));*/
+			CheckRecipe_Inductor();
+		}
+		else if (ResourceName == TEXT("Electronic"))
+		{
+			CurrentNum_Electronic++;
 			CheckRecipe_Inductor();
 		}
 	}
@@ -88,7 +93,7 @@ void ACraftTable::OnBeginOverlap_ItemVolume(UPrimitiveComponent* OverlappedComp,
 
 void ACraftTable::CheckRecipe_Inductor()
 {
-	if (CurrentNum_Metal == RequiredNum_Metal && CurrentNum_Plastic == RequiredNum_Plastic)
+	if (CurrentNum_Metal == RequiredNum_Metal && CurrentNum_Plastic == RequiredNum_Plastic && CurrentNum_Electronic == RequiredNum_Electronic)
 	{
 		Resource->Destroy();
 		//Spawn Actor

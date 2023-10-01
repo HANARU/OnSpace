@@ -80,7 +80,7 @@ void ATurret::OnEndOverlap_Detect(UPrimitiveComponent* OverlappedComp, AActor* O
 void ATurret::Activation()
 {
 	FRotator CurrentRotation = GetActorRotation();
-	if (bDetectedPlayer)
+	if (bDetectedPlayer && this != nullptr)
 	{
 		FRotator LookAtPlayer = UKismetMathLibrary::FindLookAtRotation(TurretHead->GetComponentLocation(), VRPlayer->GetActorLocation());
 		float LookatPlayerX = /*CurrentRotation.Roll + */LookAtPlayer.Roll;//FMath::Clamp(LookAtPlayer.Roll, -75, 75);
@@ -100,10 +100,11 @@ void ATurret::OnBeginOverlap_Damage(UPrimitiveComponent* OverlappedComp, AActor*
 
 	if (Bullet != nullptr)
 	{
-		GEngine->AddOnScreenDebugMessage(-1,2.f,FColor::Red,TEXT("Im sick.. cause bullet attacked me."));
+		//GEngine->AddOnScreenDebugMessage(-1,2.f,FColor::Red,TEXT("Im sick.. cause bullet attacked me."));
 		if (TurretHP <= 0)
 		{
-			DestroyAction_Implementation();
+			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Turret Down"));
+			DestroyAction();
 		}
 		else
 		{
@@ -119,4 +120,3 @@ void ATurret::DestroyAction_Implementation()
 void ATurret::Shoot2Player_Implementation()
 {
 }
-

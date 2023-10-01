@@ -12,7 +12,7 @@ struct FItemData : public FTableRowBase
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = ItemData)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = ItemData, meta = (ExposeOnSpawn=true))
 	FString ItemName;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (DisplayName = "ItemMesh"))
 	TObjectPtr<UStaticMesh> ItemMesh;

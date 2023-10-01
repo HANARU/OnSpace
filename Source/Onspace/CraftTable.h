@@ -33,6 +33,8 @@ public:
 	uint16 RequiredNum_Metal = 2;
 	uint16 CurrentNum_Plastic = 0;
 	uint16 RequiredNum_Plastic = 2;
+	uint16 CurrentNum_Electronic = 0;
+	uint16 RequiredNum_Electronic = 1;
 
 	UPROPERTY(VisibleAnywhere, Category = "Craft")
 	class AVRPlayer* VRPlayer;

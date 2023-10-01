@@ -31,7 +31,7 @@ public:
 	class AVRPlayer* VRPlayer;
 
 	bool bDetectedPlayer;
-	int32 TurretHP = 2;
+	int32 TurretHP = 4;
 
 protected:
 	virtual void BeginPlay() override;
