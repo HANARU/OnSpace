@@ -24,6 +24,9 @@
 #include "Components/AudioComponent.h"
 #include "ItemBase.h"
 #include "BlasterBullet.h"
+#include "../Plugins/Importers/USDImporter/Source/USDUtilities/Public/USDConversionUtils.h"
+#include "Components/WidgetComponent.h"
+#include "Kismet/KismetMathLibrary.h"
 
 // Sets default values
 AVRPlayer::AVRPlayer()
@@ -97,6 +100,36 @@ AVRPlayer::AVRPlayer()
 
 	OxygenGauge = CreateDefaultSubobject<UGaugeBase>(TEXT("Oxygen"));
 	OxygenGauge->SetCollisionProfileName(TEXT("NoCollision"));
+
+	//Widget Left
+	//root
+	LeftWidgetPart = CreateDefaultSubobject<USceneComponent>(TEXT("LeftWidgetPart"));
+	LeftWidgetPart->SetupAttachment(motionControllerLeft);
+
+	//and so on
+		LeftWidget_Dir = CreateDefaultSubobject<UArrowComponent>(TEXT("LeftWidget_Dir"));
+		LeftWidget_Dir->SetupAttachment(LeftWidgetPart);
+		LeftWidget_Dir->SetRelativeScale3D(FVector(0.5f));
+		LeftWidget_Dir->SetRelativeLocation(FVector(0.f,0.f,17.0f));
+		LeftWidget_Dir->SetHiddenInGame(true);
+	
+		LeftWidget_Border = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LeftWidget_Border"));
+		LeftWidget_Border->SetupAttachment(LeftWidgetPart);
+		ConstructorHelpers::FObjectFinder<UStaticMesh> tempLeftWidget_Border(TEXT("/Script/Engine.StaticMesh'/Engine/BasicShapes/Plane.Plane'"));
+		if (tempLeftWidget_Border.Succeeded())
+		{
+			LeftWidget_Border->SetStaticMesh(tempLeftWidget_Border.Object);
+			LeftWidget_Border->SetRelativeScale3D(FVector(0.5f, 0.7f, 0.4f));
+			LeftWidget_Border->SetRelativeRotation(FRotator(145.f, 270.f, 214.f));
+			LeftWidget_Border->SetRelativeLocation(FVector(0.0f, 0.0f, 17.0f));
+		}
+		
+	
+		LeftWidget_Text = CreateDefaultSubobject<UWidgetComponent>(TEXT("LeftWidget_Text"));
+		LeftWidget_Text->SetupAttachment(LeftWidgetPart);
+		LeftWidget_Text->SetWidgetClass(LeftWidgetClass);
+		LeftWidget_Text->SetDrawSize(FVector2D(1000,1000));
+		LeftWidget_Text->SetRelativeScale3D(FVector(0.1f));
 
 	//CharacterMovement value save
 	cm = this->GetCharacterMovement();
@@ -189,6 +222,19 @@ void AVRPlayer::Tick(float DeltaTime)
 
 	CheckOxygenLeak();
 	ZeroGMovement(DeltaTime);
+	
+	IsLookLeftHand = DetectLeftHandWidget();
+	if (IsLookLeftHand)
+	{
+		LeftWidget_Border->SetVisibility(true,true);
+		LeftWidget_Text->SetVisibility(true,true);
+	}
+
+	else
+	{
+		LeftWidget_Border->SetVisibility(false, true);
+		LeftWidget_Text->SetVisibility(true, true);
+	}
 }
 
 // Called to bind functionality to input
@@ -239,6 +285,29 @@ void AVRPlayer::ZeroGMovement(float DeltaTime)
 		}
 	}
 
+
+}
+
+// Widget POPUP Function
+bool AVRPlayer::DetectLeftHandWidget()
+{
+	FVector CurrWidgetForwardDir = LeftWidget_Dir->GetForwardVector();
+	
+	FVector CurrWidgetLoc = LeftWidget_Dir->GetComponentLocation();
+	FVector CurrCamLoc = compCam->GetComponentLocation();
+	FVector CheckWidget2Cam = 
+	UKismetMathLibrary::GetForwardVector(UKismetMathLibrary::FindLookAtRotation(CurrWidgetLoc, CurrCamLoc));
+	
+	bool CheckWidget2CamRes = CurrWidgetForwardDir.Equals(CheckWidget2Cam,0.35f);
+
+
+	FVector CurrCamForwardDir = compCam->GetForwardVector();
+	FVector CheckCam2Widget = UKismetMathLibrary::GetForwardVector(UKismetMathLibrary::FindLookAtRotation(CurrCamLoc, CurrWidgetLoc));
+	
+	bool CheckCam2WidgetRes = CurrCamForwardDir.Equals(CheckCam2Widget,7.0f);
+
+	if(CheckCam2WidgetRes&&CheckWidget2CamRes) return true;
+	else false;
 
 }
 

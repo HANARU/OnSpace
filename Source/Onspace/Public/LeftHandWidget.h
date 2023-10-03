@@ -13,5 +13,13 @@ UCLASS()
 class ONSPACE_API ULeftHandWidget : public UUserWidget
 {
 	GENERATED_BODY()
+
+public:
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget), Category = MySettings)
+	class UTextBlock* Mission_Contents;
+
+protected:
+	virtual void NativeConstruct() override;
+	virtual void NativeTick(const FGeometry& MyGeometry, float InDeltaTime);
 	
 };

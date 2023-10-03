@@ -3,3 +3,12 @@
 
 #include "LeftHandWidget.h"
 
+void ULeftHandWidget::NativeConstruct()
+{
+	Super::NativeConstruct();
+}
+
+void ULeftHandWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
+{
+
+}

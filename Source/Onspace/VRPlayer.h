@@ -61,6 +61,25 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Inventory")
 	class UInventoryComponent* InventoryComponent2;
 
+	//Widget Left
+	UPROPERTY(EditAnywhere, Category = "Widget")
+	class USceneComponent* LeftWidgetPart;
+
+	UPROPERTY(EditAnywhere, Category = "Widget")
+	class UArrowComponent* LeftWidget_Dir;
+
+	UPROPERTY(EditAnywhere, Category = "Widget")
+	class UStaticMeshComponent* LeftWidget_Border;
+
+	UPROPERTY(EditAnywhere, Category = "Widget")
+	class UWidgetComponent* LeftWidget_Text;
+
+
+	UPROPERTY(EditAnywhere, Category = "Widget")
+	TSubclassOf<class UUserWidget> LeftWidgetClass;
+
+	//Widget Right
+
 
 	/*-------------- ENHANCED INPUT ------------- */
 	//Context
@@ -134,6 +153,9 @@ public:
 	FVector CurrentLocation;
 
 	UPROPERTY()
+	bool IsLookLeftHand = false;
+
+	UPROPERTY()
 	float SphereRadius =10.0f;
 	UPROPERTY()
 	class AActor* GrabLeftActor;
@@ -195,4 +217,5 @@ public:
 
 
 	void ZeroGMovement(float DeltaTime);
+	bool DetectLeftHandWidget();
 };
