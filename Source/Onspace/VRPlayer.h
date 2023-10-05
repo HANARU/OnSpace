@@ -71,7 +71,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Widget")
 	class UStaticMeshComponent* LeftWidget_Border;
 
-	UPROPERTY(EditAnywhere, Category = "Widget")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widget")
 	class UWidgetComponent* LeftWidget_Text;
 
 
@@ -207,6 +207,12 @@ public:
 	//Warning Sound Comp
 	UPROPERTY(EditAnywhere, Category = "Sound")
 	class UAudioComponent* WarningSound;
+
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class USoundBase* FireSoundBase;
+
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class UAudioComponent* FireSound;
 
 
 	void CheckOxygenLeak();

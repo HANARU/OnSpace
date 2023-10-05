@@ -1,8 +1,10 @@
 #include "Turret.h"
 #include "VRPlayer.h"
 #include "BlasterBullet.h"
+#include "VRInstance.h"
 #include "Components/SphereComponent.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Kismet/GameplayStatics.h"
 
 ATurret::ATurret()
 {
@@ -105,6 +107,8 @@ void ATurret::OnBeginOverlap_Damage(UPrimitiveComponent* OverlappedComp, AActor*
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Turret Down"));
 			DestroyAction();
+			UVRInstance* Instance = Cast<UVRInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+			Instance->UpdateMission();
 		}
 		else
 		{

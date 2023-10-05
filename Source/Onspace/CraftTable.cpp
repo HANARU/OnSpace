@@ -1,6 +1,8 @@
 #include "CraftTable.h"
 #include "VRPlayer.h"
 #include "ItemBase.h"
+#include "VRInstance.h"
+#include "Kismet/GameplayStatics.h"
 #include "Components/BoxComponent.h"
 
 ACraftTable::ACraftTable()
@@ -37,8 +39,9 @@ void ACraftTable::BeginPlay()
 	Super::BeginPlay();
 
 	ItemOverlapVolume->OnComponentBeginOverlap.AddDynamic(this, &ACraftTable::OnBeginOverlap_ItemVolume);
-	
-	
+
+	ObjectInput = LoadObject<USoundBase>(nullptr, TEXT("/Game/8_Sound/Craft/S_PutInSlot"));
+	CraftSuccess = LoadObject<USoundBase>(nullptr, TEXT("/Game/8_Sound/GUI/S_Achievement_2"));	
 }
 
 void ACraftTable::Tick(float DeltaTime)
@@ -86,6 +89,7 @@ void ACraftTable::OnBeginOverlap_ItemVolume(UPrimitiveComponent* OverlappedComp,
 		else if (ResourceName == TEXT("Electronic"))
 		{
 			CurrentNum_Electronic++;
+			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Electronic Overlap"));
 			CheckRecipe_Inductor();
 		}
 	}
@@ -99,11 +103,24 @@ void ACraftTable::CheckRecipe_Inductor()
 		//Spawn Actor
 		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Recipe Checked! Ready for make Object"));
 		UE_LOG(LogTemp, Log, TEXT("Recipe Checked! Ready for make Object"));
+		UVRInstance* Instance = Cast<UVRInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+		Instance->UpdateMission();
+		CraftSuccessSound = UGameplayStatics::SpawnSound2D(GetWorld(), CraftSuccess);
 		MakeInductor();
 		//Destroy Widget;
 	}
+	else if (CurrentNum_Metal == RequiredNum_Metal && CurrentNum_Plastic == RequiredNum_Plastic && CurrentNum_Electronic == 0)
+	{
+		ObjectInputSound = UGameplayStatics::SpawnSound2D(GetWorld(), ObjectInput);
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Next Mission 3rd"));
+		UVRInstance* Instance = Cast<UVRInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+		Instance->UpdateMission();
+		Resource->Destroy();
+
+	}
 	else
 	{
+		ObjectInputSound = UGameplayStatics::SpawnSound2D(GetWorld(), ObjectInput);
 		Resource->Destroy();
 	}
 }

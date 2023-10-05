@@ -1,6 +1,7 @@
 #include "ItemBase.h"
 #include "SpaceShip.h"
 #include "VRPlayer.h"
+#include "VRInstance.h"
 #include "Components/BoxComponent.h"
 #include "MotionControllerComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -20,7 +21,8 @@ void AItemBase::BeginPlay()
 
 	ItemBody->OnComponentBeginOverlap.AddDynamic(this, &AItemBase::OnItemBodyBeginOverlap);
 	ItemBody->OnComponentBeginOverlap.AddDynamic(this, &AItemBase::OnBeginOverlap_CanEat);
-	
+
+	GrabObjectSound = LoadObject<USoundBase>(nullptr, TEXT("/Game/8_Sound/Craft/S_ThrowItem"));
 }
 
 
@@ -57,6 +59,7 @@ void AItemBase::ExecuteGrab(UMotionControllerComponent* MotionControllerToGrab)
 	
 	if (bIsBlaster && MotionController == Player->motionControllerLeft)
 	{
+		
 		GEngine->AddOnScreenDebugMessage(-1, 4.f, FColor::Yellow, TEXT("Left Grab!"));
 		if (bHasGravity)
 		{
@@ -102,7 +105,11 @@ void AItemBase::ExecuteGrab(UMotionControllerComponent* MotionControllerToGrab)
 			ItemBody->SetSimulatePhysics(bHasGravity);
 		}
 	}
-	
+	GrabSound = UGameplayStatics::SpawnSound2D(GetWorld(), GrabObjectSound);
+
+	GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Red, TEXT("Next Mission"));
+	UVRInstance* Instance = Cast<UVRInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+	Instance->Update2ndMission();
 }
 
 void AItemBase::ExecuteRelease(UMotionControllerComponent* MotionControllerToRelease)

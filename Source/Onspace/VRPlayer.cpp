@@ -24,7 +24,6 @@
 #include "Components/AudioComponent.h"
 #include "ItemBase.h"
 #include "BlasterBullet.h"
-#include "../Plugins/Importers/USDImporter/Source/USDUtilities/Public/USDConversionUtils.h"
 #include "Components/WidgetComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 
@@ -105,6 +104,7 @@ AVRPlayer::AVRPlayer()
 	//root
 	LeftWidgetPart = CreateDefaultSubobject<USceneComponent>(TEXT("LeftWidgetPart"));
 	LeftWidgetPart->SetupAttachment(motionControllerLeft);
+	LeftWidgetPart->SetRelativeRotation(FRotator(0,0,-90));
 
 	//and so on
 		LeftWidget_Dir = CreateDefaultSubobject<UArrowComponent>(TEXT("LeftWidget_Dir"));
@@ -212,6 +212,8 @@ void AVRPlayer::BeginPlay()
 	Suffocation = LoadObject<USoundBase>(nullptr, TEXT("/Game/8_Sound/Breath/Suffocation_01.Suffocation_01"));
 	
 	OxygenWarning = LoadObject<USoundBase>(nullptr, TEXT("/Game/8_Sound/GUI/S_Warning.S_Warning"));
+
+	FireSoundBase = LoadObject<USoundBase>(nullptr, TEXT("/Game/8_Sound/Blaster_Fire/S_BlasterShot3"));
 	
 }
 
@@ -233,7 +235,7 @@ void AVRPlayer::Tick(float DeltaTime)
 	else
 	{
 		LeftWidget_Border->SetVisibility(false, true);
-		LeftWidget_Text->SetVisibility(true, true);
+		LeftWidget_Text->SetVisibility(false, true);
 	}
 }
 
@@ -298,16 +300,24 @@ bool AVRPlayer::DetectLeftHandWidget()
 	FVector CheckWidget2Cam = 
 	UKismetMathLibrary::GetForwardVector(UKismetMathLibrary::FindLookAtRotation(CurrWidgetLoc, CurrCamLoc));
 	
-	bool CheckWidget2CamRes = CurrWidgetForwardDir.Equals(CheckWidget2Cam,0.35f);
+	//bool CheckWidget2CamRes = CurrWidgetForwardDir.Equals(CheckWidget2Cam,0.35f);
+	bool CheckWidget2CamRes = UKismetMathLibrary::EqualEqual_VectorVector(CurrWidgetForwardDir, CheckWidget2Cam, 0.35f);
 
 
 	FVector CurrCamForwardDir = compCam->GetForwardVector();
 	FVector CheckCam2Widget = UKismetMathLibrary::GetForwardVector(UKismetMathLibrary::FindLookAtRotation(CurrCamLoc, CurrWidgetLoc));
 	
-	bool CheckCam2WidgetRes = CurrCamForwardDir.Equals(CheckCam2Widget,7.0f);
+	//bool CheckCam2WidgetRes = CurrCamForwardDir.Equals(CheckCam2Widget,7.0f);
+	bool CheckCam2WidgetRes = UKismetMathLibrary::EqualEqual_VectorVector(CurrCamForwardDir, CheckCam2Widget, 7.f);
 
-	if(CheckCam2WidgetRes&&CheckWidget2CamRes) return true;
-	else false;
+	if (CheckCam2WidgetRes && CheckWidget2CamRes)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 
 }
 
@@ -453,6 +463,7 @@ void AVRPlayer::Fire_Left_Started(const FInputActionValue& value)
 			Parm.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 			GetWorld()->SpawnActor<ABlasterBullet>(Bullet,ResourceTransform,Parm);
 			GEngine->AddOnScreenDebugMessage(-1,2.f,FColor::Red,TEXT("Left Fire!"));
+			FireSound = UGameplayStatics::SpawnSound2D(GetWorld(), FireSoundBase);
 		}
 	}
 }
@@ -470,6 +481,7 @@ void AVRPlayer::Fire_Right_Started(const FInputActionValue& value)
 			//Right Fire!
 			GetWorld()->SpawnActor<ABlasterBullet>(Bullet, ResourceTransform,Parm);
 			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Right Fire!"));
+			FireSound = UGameplayStatics::SpawnSound2D(GetWorld(), FireSoundBase);
 		}
 	}
 }

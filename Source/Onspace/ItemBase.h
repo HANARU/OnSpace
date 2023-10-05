@@ -51,6 +51,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item)
 	class AVRPlayer* Player;
 
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class USoundBase* GrabObjectSound;
+
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class UAudioComponent* GrabSound;
+
 	FItemData* CurrentItemData;
 	UDataTable* CurrentItemTable;
 

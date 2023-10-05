@@ -16,3 +16,16 @@ FItemData* UVRInstance::GetItemData(FString ItemName)
 {
 	return ItemDataTable->FindRow<FItemData>(*FString(ItemName), TEXT(""));
 }
+
+void UVRInstance::Update2ndMission()
+{
+	if (SecondMission == false)
+	{
+		SecondMission = true;
+		UpdateMission();
+	}
+}
+
+void UVRInstance::UpdateMission_Implementation()
+{
+}

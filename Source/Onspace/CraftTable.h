@@ -24,6 +24,18 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Craft")
 	class USceneComponent* SpawnItemPoint;
 
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class USoundBase* ObjectInput;
+
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class UAudioComponent* ObjectInputSound;
+
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class USoundBase* CraftSuccess;
+
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	class UAudioComponent* CraftSuccessSound;
+
 	/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Craft")
 	class UUserWidget* Widget;*/
 

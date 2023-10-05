@@ -41,6 +41,8 @@ ABlasterBullet::ABlasterBullet()
 	BulletMovement->InitialSpeed = 3000;
 	BulletMovement->MaxSpeed = 3000;
 
+	this->SetLifeSpan(10);
+
 }
 
 // Called when the game starts or when spawned
